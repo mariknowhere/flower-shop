@@ -10,12 +10,12 @@ const Social: FC<ISocialProps> = ({
   className,
   classNameImage,
   id,
-  number ,
+  text,
 }) => {
   return (
     <a target='_blank' href={href} className={classNames(className, styles['social'])} rel='noreferrer' key={id}>
       {image && <Image {...image} className={classNameImage}/>}
-      {number}
+      {text}
     </a>
   );
 };

@@ -2,14 +2,19 @@ import React, {FC} from 'react';
 import './CommonPage.css';
 import Header from "../blocks/header/Header";
 import {store} from "../store/store";
+import Menu from "../blocks/menu/Menu";
+import {BrowserRouter} from "react-router-dom";
+import AppRouter from "../router/AppRouter";
 
 const CommonPage: FC = () => {
-  const { headerData } = store;
+  const { headerData, menuData } = store;
 
   return (
-    <div>
+    <BrowserRouter>
       <Header {...headerData} />
-    </div>
+      <Menu {...menuData} />
+      <AppRouter />
+    </BrowserRouter>
   );
 };
 

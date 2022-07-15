@@ -13,15 +13,23 @@ const Header: FC<IHeaderProps> = ({ image, search, socials, socialNumbers  }) =>
           <div className={styles['header-logo']}>
             <Image {...image} className={styles['header-image']} />
           </div>
-          <div>
+          <div className={styles['header-image-wrapper']}>
             <Search {...search} />
           </div>
-          {socials.map((social) => (
-            <Social {...social} />
-          ))}
-          {socialNumbers.map((social) => (
-            <Social {...social} className={styles['header-social-number']} />
+          <div className={styles['header-socials-wrapper']}>
+            {socials.map((social) => (
+              <Social {...social} />
             ))}
+          </div>
+          <div className={styles['header-socials-number-wrapper']}>
+            {socialNumbers.map((social) => (
+              <Social
+                {...social}
+                className={styles['header-social-number']}
+                classNameImage={styles['header-social-number-image']}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </header>

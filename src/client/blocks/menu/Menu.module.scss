@@ -1,0 +1,65 @@
+@import 'src/client/styles/colors';
+@import 'src/client/styles/variables';
+
+.menu {
+  width: 100%;
+  background: #44444b;
+
+  &-container {
+    width: 100%;
+    padding: 0 100px;
+  }
+
+  &-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    flex-wrap: wrap;
+  }
+
+  &-list {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+
+    &-item {
+      display: block;
+      font-style: normal;
+      color: $color-white;
+      font-size: 18px;
+      line-height: 23px;
+      padding: 15px 0;
+      transition: all $animation-duration ease-out;
+      -webkit-transition: all $animation-duration ease-out;
+
+      &:hover {
+        color: $color-number-hover;
+      }
+
+      &-wrapper {
+        &:not(:first-child, :last-child) {
+          margin: 0 80px;
+        }
+
+        &:first-child {
+          margin-right: 80px;
+        }
+
+        &:last-child {
+          margin-left: 80px;
+        }
+      }
+    }
+  }
+}

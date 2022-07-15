@@ -6,5 +6,5 @@ export interface ISocialProps {
   image?: IImageProps;
   className?: string;
   classNameImage?: string;
-  number?: string;
+  text?: string;
 }
