@@ -16,7 +16,7 @@ const AboutPage: FC = () => {
   const onClickHandler = () => setMenuActive(!menuActive);
   const { title, cards, hamburgerMenu } = about;
 
-  const date = new Date;
+  const date = new Date();
   const currentHour = date.getHours()
   const isShopOpen = currentHour >= 10 && currentHour < 19;
 
