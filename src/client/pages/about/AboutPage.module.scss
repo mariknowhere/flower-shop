@@ -45,8 +45,9 @@
 
       &-title {
         font-weight: 500;
+        font-size: 22px;
         cursor: pointer;
-        color: $color-black;
+        color: $color-black-10;
         transition: color $animation-duration linear;
 
         &:hover {
@@ -68,19 +69,32 @@
       &-hours {
         display: flex;
         align-items: center;
+
+        &-wrapper {
+          display: flex;
+          align-items: center;
+        }
       }
 
       &-description {
         display: flex;
+        font-size: 18px;
         flex-grow: 1;
-        margin-top: 12px;
+        margin: 35px 0 0 5px;
+        color: $color-black-10;
+        transition: color $animation-duration ease-in;
+        cursor: pointer;
+
+        &:hover {
+          color: $color-hover;
+        }
       }
 
       &-review {
         align-items: center;
         padding: 10px 38px 10px 18px;
         font-size: 14px;
-        color: #263238;
+        color: $color-black-20;
         text-decoration: none;
         border-radius: 8px;
         border: 1px solid $color-gray-40;
@@ -122,6 +136,12 @@
       padding: 0;
       border: none;
       border-radius: 28px;
+      background-color: $color-gray-40;
+      transition: background-color $animation-duration-more ease-out;
+
+      &:hover {
+        background-color: $color-hover;
+      }
     }
   }
 }

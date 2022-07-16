@@ -5,7 +5,10 @@ $mobile-min-width: 320px;
 
 $block-max-width: 1140px;
 
-$animation-duration: 0.2s;
+$animation-duration: .2s;
+$animation-duration-more: .5s;
 
 $black-line-height: 1px;
 $black-line-width: 20px;
+
+$z-index-overlay: 101;

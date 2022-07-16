@@ -1,0 +1,136 @@
+@import 'src/client/styles/colors';
+@import 'src/client/styles/variables';
+
+.hamburger-menu {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transform: translateX(-130%);
+  transition: all 0.5s;
+  z-index: $z-index-overlay;
+
+  &-active {
+    transform: translateX(0);
+  }
+
+  &-overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-black-20;
+    transition: opacity $animation-duration linear $animation-duration;
+
+    &-open {
+      left: 400px;
+      opacity: .75;
+    }
+
+    &-close {
+      opacity: 0;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 100%;
+    background-color: $color-orange;
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    background-color: #f1f6f7;
+    height: 72px;
+  }
+
+  &-phone {
+    padding: 0 25px;
+  }
+
+  &-title {
+    font-weight: normal;
+  }
+
+  &-close-icon {
+    cursor: pointer;
+    padding: 0 16px 0 16px;
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: $color-white;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 30px;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #e3ecef;
+    padding: 15px 0;
+
+    &-image {
+      padding-right: 10px;
+    }
+
+    &-geo,
+    &-email,
+    &-hours {
+      color: $color-black-20 !important;
+    }
+
+    &-geo {
+      transition: color $animation-duration ease;
+
+      &:hover {
+        color: $color-hover !important;
+      }
+    }
+
+    &-hours {
+      pointer-events: none;
+    }
+
+    &-circle {
+      margin-left: 6px;
+    }
+
+    &-mobile {
+      font-weight: 600;
+      font-size: 20px;
+      color: $color-black-10;
+      transition: color $animation-duration linear;
+
+
+      &:hover {
+        color: $color-hover;
+      }
+    }
+
+    &-email {
+      font-size: 16px;
+      color: $color-black-10;
+      transition: color $animation-duration linear;
+
+      &:hover {
+        color: $color-hover !important;
+      }
+    }
+  }
+}

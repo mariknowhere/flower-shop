@@ -6,7 +6,7 @@
   &::before {
     content: '';
     position: absolute;
-    background: $color-black;
+    background: $color-black-10;
     height: $black-line-height;
     width: $black-line-width;
     top: 23px;
@@ -16,7 +16,7 @@
   &::after {
     content: '';
     position: absolute;
-    background: $color-black;
+    background: $color-black-10;
     height: $black-line-height;
     width: $black-line-width;
     top: 23px;
