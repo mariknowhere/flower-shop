@@ -23,19 +23,19 @@
     height: 40px;
     padding: 10px 5px 10px 30px;
     font-size: 1rem;
-    border: 1px solid $color-gray;
+    border: 1px solid $color-gray-20;
     appearance: none;
     transition: border-color $animation-duration ease-in-out,box-shadow $animation-duration ease-in-out;
 
     &:focus {
-      box-shadow: 0 0 10px $color-gray;
+      box-shadow: 0 0 10px $color-gray-20;
     }
   }
 
   &-description {
     display: block;
     position: absolute;
-    color: $color-gray;
+    color: $color-gray-20;
     top: 12px;
     right: 10px;
   }

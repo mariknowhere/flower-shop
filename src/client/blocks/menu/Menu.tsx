@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import {IMenuProps} from "./MenuTypes";
 import styles from './Menu.module.scss';
 import Social from "../../components/social/Social";
+import {Link} from "react-router-dom";
 
 const Menu: FC<IMenuProps> = ({ items, social }) => {
   return (
@@ -9,9 +10,9 @@ const Menu: FC<IMenuProps> = ({ items, social }) => {
       <div className={styles['menu-container']}>
         <div className={styles['menu-wrapper']}>
           <ul className={styles['menu-list']}>
-            {items.map((item) => (
+            {items.map(({ href, text, id }) => (
               <li className={styles['menu-list-item-wrapper']}>
-                <Social {...item} className={styles['menu-list-item']} />
+                <Link to={href} key={id} className={styles['menu-list-item']}>{text}</Link>
               </li>
             ))}
           </ul>

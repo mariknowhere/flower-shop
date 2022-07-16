@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Device = () => {
+const NewsPage = () => {
   return (
     <div>
-      Device!
+
     </div>
   );
 };
 
-export default Device;
+export default NewsPage;

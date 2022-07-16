@@ -1,0 +1,34 @@
+@import 'src/client/styles/colors';
+
+.card {
+  height: auto;
+
+  &-header {
+    position: relative;
+  }
+
+  &-icon {
+    position: relative;
+    left: -9px;
+    top: 8px;
+
+    &-wrapper {
+      position: absolute;
+      left: -10px;
+    }
+  }
+
+  &-image {
+    &-wrapper {
+      height: 120px;
+    }
+  }
+
+  &-title {
+    font-weight: 700;
+  }
+
+  &-description {
+    margin: 4px 0 0;
+  }
+}

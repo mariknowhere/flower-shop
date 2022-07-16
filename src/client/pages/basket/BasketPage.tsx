@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Admin = () => {
+const BasketPage = () => {
   return (
     <div>
-      Admin!
+      Basket!
     </div>
   );
 };
 
-export default Admin;
+export default BasketPage;

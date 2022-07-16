@@ -1,0 +1,127 @@
+@import 'src/client/styles/designMixins';
+@import 'src/client/styles/variables';
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: $block-max-width;
+  margin: 0 auto;
+
+  &-title {
+    position: relative;
+    font-weight: normal;
+
+    @include black-line;
+
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      cursor: default;
+    }
+  }
+
+  &-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding: 25px;
+    border: 1px solid $color-gray-20;
+    border-radius: 5px;
+    transition: all $animation-duration linear;
+
+    &:hover {
+      box-shadow: 0 0 24px $color-gray-20;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding-left: 20px;
+      cursor: default;
+
+      &-title {
+        font-weight: 500;
+        cursor: pointer;
+        color: $color-black;
+        transition: color $animation-duration linear;
+
+        &:hover {
+          color: $color-hover;
+        }
+      }
+
+      &-body {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 4px 0;
+      }
+
+      &-address {
+        color: $color-geo;
+      }
+
+      &-hours {
+        display: flex;
+        align-items: center;
+      }
+
+      &-description {
+        display: flex;
+        flex-grow: 1;
+        margin-top: 12px;
+      }
+
+      &-review {
+        align-items: center;
+        padding: 10px 38px 10px 18px;
+        font-size: 14px;
+        color: #263238;
+        text-decoration: none;
+        border-radius: 8px;
+        border: 1px solid $color-gray-40;
+        background-color: $color-white;
+        transition: color $animation-duration ease 0s,border-color $animation-duration ease 0s,background-color $animation-duration ease 0s,opacity $animation-duration ease 0s;
+
+        &-wrapper {
+          margin-bottom: 30px;
+          position: relative;
+        }
+
+        &:hover {
+          color: $color-white;
+          background-color: $color-hover;
+        }
+
+        &-count {
+          position: absolute;
+          padding: 2px 5px 1px;
+          font-size: 11px;
+          color: $color-gray-10;
+          line-height: 13px;
+          border-radius: 3px;
+          background: $color-gray-30;
+          top: -1px;
+          left: 75px;
+          pointer-events: none;
+        }
+      }
+    }
+
+    &-button {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: none;
+      border-radius: 28px;
+    }
+  }
+}

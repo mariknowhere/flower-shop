@@ -1,27 +1,37 @@
-import Admin from "../pages/admin/Admin";
-import {ADMIN_ROUTE, BASKET_ROUTE, DEVICE_ROUTE, SHOP_ROUTE} from "../constants/routes";
-import Basket from "../pages/basket/Basket";
-import Shop from "../pages/shop/Shop";
-import Device from "../pages/device/Device";
+import AdminPage from "../pages/admin/AdminPage";
+import {ABOUT_ROUTE, ADMIN_ROUTE, BASKET_ROUTE, DEVICE_ROUTE, NEWS_ROUTE, SHOP_ROUTE} from "../constants/routes";
+import BasketPage from "../pages/basket/BasketPage";
+import ShopPage from "../pages/shop/ShopPage";
+import DevicePage from "../pages/device/DevicePage";
+import NewsPage from "../pages/news/NewsPage";
+import AboutPage from "../pages/about/AboutPage";
 
 export const privateRoutes = [
   {
     path: ADMIN_ROUTE,
-    element: Admin,
+    element: AdminPage,
   },
   {
     path: BASKET_ROUTE,
-    element: Basket,
+    element: BasketPage,
   },
 ];
 
 export const publicRoutes = [
   {
     path: SHOP_ROUTE,
-    element: Shop,
+    element: ShopPage,
   },
   {
     path: DEVICE_ROUTE,
-    element: Device,
+    element: DevicePage,
   },
-]
+  {
+    path: NEWS_ROUTE,
+    element: NewsPage,
+  },
+  {
+    path: ABOUT_ROUTE,
+    element: AboutPage,
+  }
+];

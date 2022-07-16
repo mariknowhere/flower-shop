@@ -1,3 +1,5 @@
+import {ABOUT_ROUTE, NEWS_ROUTE} from "../constants/routes";
+
 export const store = {
   headerData: {
     image: {
@@ -25,10 +27,20 @@ export const store = {
     socialNumbers: [
       {
         href: 'tel:+375295629358',
-        image: {
-          url: 'icons/header/viber.png',
-          height: 26,
-        },
+        images: [
+          {
+            url: 'icons/header/viber.png',
+            height: 26,
+          },
+          {
+            url: 'icons/header/telegram.png',
+            height: 26,
+          },
+          {
+            url: 'icons/header/whatsapp.png',
+            height: 26,
+          },
+        ],
         text: '+375 (29) 562-93-58',
         id: 1,
       }
@@ -52,12 +64,12 @@ export const store = {
         id: 3,
       },
       {
-        href: '',
+        href: NEWS_ROUTE,
         text: 'Новости',
         id: 4,
       },
       {
-        href: '',
+        href: ABOUT_ROUTE,
         text: 'Наши магазины',
         id: 5,
       },

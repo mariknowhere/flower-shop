@@ -1,0 +1,25 @@
+@import "colors";
+@import "variables";
+
+
+@mixin black-line {
+  &::before {
+    content: '';
+    position: absolute;
+    background: $color-black;
+    height: $black-line-height;
+    width: $black-line-width;
+    top: 23px;
+    left: -30px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: $color-black;
+    height: $black-line-height;
+    width: $black-line-width;
+    top: 23px;
+    right: -30px;
+  }
+}
