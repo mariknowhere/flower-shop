@@ -20,7 +20,7 @@
     width: 100vw;
     height: 100vh;
     background-color: $color-black-20;
-    transition: opacity $animation-duration linear $animation-duration;
+    transition: opacity $animation-duration linear .4s;
 
     &-open {
       left: 400px;
@@ -46,7 +46,7 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    background-color: #f1f6f7;
+    background-color: $color-gray-50;
     height: 72px;
   }
 
@@ -55,12 +55,12 @@
   }
 
   &-title {
-    font-weight: normal;
+    font-weight: normal !important;
   }
 
   &-close-icon {
     cursor: pointer;
-    padding: 0 16px 0 16px;
+    padding-left: 20px;
   }
 
   &-body {

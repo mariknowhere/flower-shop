@@ -1,4 +1,4 @@
-import {ABOUT_ROUTE, NEWS_ROUTE} from "../constants/routes";
+import {ABOUT_ROUTE, DELIVERY_ROUTE, NEWS_ROUTE} from "../constants/routes";
 
 export const store = {
   headerData: {
@@ -54,7 +54,7 @@ export const store = {
         id: 1,
       },
       {
-        href: '',
+        href: DELIVERY_ROUTE,
         text: 'Доставка',
         id: 2,
       },

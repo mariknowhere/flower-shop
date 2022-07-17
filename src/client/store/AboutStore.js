@@ -1,6 +1,20 @@
 export default class AboutStore {
   constructor() {
-    this.title = 'Наши магазины'
+    this.navigator = {
+      title: 'Магазины',
+      socialBackText: {
+        text: 'Главная',
+        href: '/'
+      },
+      socialBackImage: {
+        image: {
+          url: 'icons/about/less.png',
+          height: 40,
+        },
+        href: '/',
+      },
+    }
+    this.title = 'Магазины «Цветочная Кухня» в Полоцке'
     this.cards = [
       {
         id: 1,
@@ -33,7 +47,7 @@ export default class AboutStore {
       header: {
         closeImage: {
           url: 'icons/about/close.png',
-          height: 30,
+          height: 45,
         },
         title: 'Салон «Цветочная Кухня»',
         phoneImage: {

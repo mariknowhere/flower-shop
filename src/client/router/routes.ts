@@ -1,10 +1,19 @@
 import AdminPage from "../pages/admin/AdminPage";
-import {ABOUT_ROUTE, ADMIN_ROUTE, BASKET_ROUTE, DEVICE_ROUTE, NEWS_ROUTE, SHOP_ROUTE} from "../constants/routes";
+import {
+  ABOUT_ROUTE,
+  ADMIN_ROUTE,
+  BASKET_ROUTE,
+  DELIVERY_ROUTE,
+  DEVICE_ROUTE,
+  NEWS_ROUTE,
+  SHOP_ROUTE
+} from "../constants/routes";
 import BasketPage from "../pages/basket/BasketPage";
 import ShopPage from "../pages/shop/ShopPage";
 import DevicePage from "../pages/device/DevicePage";
 import NewsPage from "../pages/news/NewsPage";
 import AboutPage from "../pages/about/AboutPage";
+import DeliveryPage from "../pages/delivery/DeliveryPage";
 
 export const privateRoutes = [
   {
@@ -33,5 +42,9 @@ export const publicRoutes = [
   {
     path: ABOUT_ROUTE,
     element: AboutPage,
+  },
+  {
+    path: DELIVERY_ROUTE,
+    element: DeliveryPage,
   }
 ];
