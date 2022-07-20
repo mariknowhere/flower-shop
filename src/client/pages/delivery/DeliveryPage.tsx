@@ -3,7 +3,7 @@ import {Context} from "../../../index";
 import Navigator from "../../components/navigator/Navigator";
 import Title from "../../components/title/Title";
 import styles from './DeliveryPage.module.scss';
-import Table from "../../components/table/Table";
+import DeliveryTable from "./deliveryTable/DeliveryTable";
 import Text from "../../components/text/Text";
 import {TextVariantEnum} from "../../components/text/TextTypes";
 
@@ -16,7 +16,7 @@ const DeliveryPage: FC = () => {
       <Navigator {...navigator} />
       <div className={styles['delivery-container']}>
         <Title children={title} className={styles['delivery-title']} />
-        <Table {...table} />
+        <DeliveryTable {...table} />
         <hr/>
         <Text children={description} variant={TextVariantEnum.S} className={styles['delivery-description']} />
       </div>

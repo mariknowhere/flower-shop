@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
-import styles from "./Table.module.scss";
-import {ITableProps} from "./TableTypes";
+import styles from "./DeliveryTable.module.scss";
+import {IDeliveryTableProps} from "./DeliveryTableTypes";
 
-const Table: FC<ITableProps> = ({ head, body }) => {
+const DeliveryTable: FC<IDeliveryTableProps> = ({ head, body }) => {
   return (
     <table className={styles.table}>
       <thead>
@@ -37,4 +37,4 @@ const Table: FC<ITableProps> = ({ head, body }) => {
   );
 };
 
-export default Table;
+export default DeliveryTable;

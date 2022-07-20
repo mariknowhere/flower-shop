@@ -17,7 +17,7 @@ export interface IBodyProps {
   deliveryInRegionLate: string,
 }
 
-export interface ITableProps {
+export interface IDeliveryTableProps {
   head: IHeadProps;
   body: IBodyProps;
 }
