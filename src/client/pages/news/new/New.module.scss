@@ -1,0 +1,51 @@
+@import "src/client/styles/colors";
+@import "src/client/styles/variables";
+
+.new {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  padding: 25px;
+  border: 1px solid $color-gray-20;
+  border-radius: 5px;
+  transition: all $animation-duration linear;
+
+  &:hover {
+    box-shadow: 0 0 24px $color-gray-20;
+  }
+
+  &-image {
+    max-height: 350px;
+    max-width: 600px;
+    margin-right: 20px;
+  }
+
+  &-info {
+    display: inherit;
+    flex-direction: column;
+  }
+
+  &-date {
+    display: inherit;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+    pointer-events: none;
+
+    &-text {
+      margin-left: 5px;
+      color: $color-geo;
+    }
+  }
+
+  &-description {
+    display: inherit;
+    flex-grow: 1;
+    margin-top: 10px;
+  }
+
+  &-review {
+    margin-bottom: 25px;
+  }
+}

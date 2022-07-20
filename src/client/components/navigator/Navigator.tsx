@@ -10,7 +10,10 @@ const Navigator: FC<INavigatorProps> = ({ socialBackImage, socialBackText, title
     <div className={styles.navigator}>
       <div className={styles['navigator-container']}>
         <div className={styles['navigator-image-wrapper']}>
-          <Social {...socialBackImage} className={styles['navigator-image']} />
+          <Link
+            to={socialBackImage.href}
+            children={<Social {...socialBackImage} className={styles['navigator-image']} />}
+          />
         </div>
         <div className={styles['navigator-text']}>
           <Link to={socialBackText.href} className={styles['navigator-link']}>{socialBackText.text}</Link>

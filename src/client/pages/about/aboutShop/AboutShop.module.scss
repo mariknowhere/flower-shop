@@ -59,7 +59,7 @@
       display: flex;
       font-size: 18px;
       flex-grow: 1;
-      margin: 35px 0 0 5px;
+      margin: 20px 0 0 5px;
       color: $color-black-10;
       transition: color $animation-duration ease-in;
       cursor: pointer;
@@ -70,37 +70,10 @@
     }
 
     &-review {
-      align-items: center;
-      padding: 10px 38px 10px 18px;
-      font-size: 14px;
-      color: $color-black-20;
-      text-decoration: none;
-      border-radius: 8px;
-      border: 1px solid $color-gray-40;
-      background-color: $color-white;
-      transition: color $animation-duration ease 0s,border-color $animation-duration ease 0s,background-color $animation-duration ease 0s,opacity $animation-duration ease 0s;
+      margin-bottom: 20px;
 
-      &-wrapper {
-        margin-bottom: 30px;
-        position: relative;
-      }
-
-      &:hover {
-        color: $color-white;
-        background-color: $color-hover;
-      }
-
-      &-count {
-        position: absolute;
-        padding: 2px 5px 1px;
-        font-size: 11px;
-        color: $color-gray-10;
-        line-height: 13px;
-        border-radius: 3px;
-        background: $color-gray-30;
-        top: -1px;
-        left: 75px;
-        pointer-events: none;
+      &-text {
+        padding: 10px 38px 10px 18px;
       }
     }
   }

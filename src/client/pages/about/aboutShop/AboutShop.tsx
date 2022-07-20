@@ -6,6 +6,7 @@ import Text from "../../../components/text/Text";
 import {TextVariantEnum} from "../../../components/text/TextTypes";
 import Circle from "../../../components/circle/Circle";
 import {IAboutShopProps} from "./AboutShopTypes";
+import Button from "../../../components/button/Button";
 
 const AboutShop: FC <IAboutShopProps> = ({
   id,
@@ -35,10 +36,12 @@ const AboutShop: FC <IAboutShopProps> = ({
           <Text children={hours} variant={TextVariantEnum.S} className={styles['about-shop-info-hours']} />
         </div>
         <Social text={shoppingCenter.text} href={shoppingCenter.href} className={styles['about-shop-info-description']} />
-        <div className={styles['about-shop-info-review-wrapper']}>
-          <Social {...review.social} className={styles['about-shop-info-review']} />
-          <span className={styles['about-shop-info-review-count']}>{review.count}</span>
-        </div>
+        <Button
+          button={review.social}
+          buttonLabel={review.count}
+          className={styles['about-shop-info-review']}
+          classNameButton={styles['about-shop-info-review-text']}
+        />
       </div>
       <div>
         <button className={styles['about-shop-button']} onClick={onClick}>

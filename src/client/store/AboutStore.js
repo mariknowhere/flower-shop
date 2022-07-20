@@ -8,7 +8,7 @@ export default class AboutStore {
       },
       socialBackImage: {
         image: {
-          url: 'icons/about/less.png',
+          url: 'icons/less.png',
           height: 40,
         },
         href: '/',
