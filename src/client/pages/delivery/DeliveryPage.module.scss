@@ -9,18 +9,22 @@ hr {
 }
 
 .delivery {
-
   &-container {
     display: flex;
     flex-direction: column;
     max-width: $block-max-width;
     margin: 0 auto;
-    pointer-events: none;
+    cursor: default;
   }
 
   &-title {
-    font-weight: normal;
-    margin: 50px 0 30px 0;
+    margin: 25px 0 5px;
+  }
+
+  &-table-row {
+    &:nth-child(odd) {
+      background-color: $color-gray-50;
+    }
   }
 
   &-description {

@@ -1,4 +1,4 @@
-import {ABOUT_ROUTE, DELIVERY_ROUTE, NEWS_ROUTE} from "../constants/routes";
+import {ABOUT_ROUTE, DELIVERY_ROUTE, NEWS_ROUTE, PAYMENT_ROUTE, SHOP_ROUTE} from "../constants/routes";
 
 export const store = {
   headerData: {
@@ -49,7 +49,7 @@ export const store = {
   menuData: {
     items: [
       {
-        href: '',
+        href: SHOP_ROUTE,
         text: 'Каталог',
         id: 1,
       },
@@ -59,7 +59,7 @@ export const store = {
         id: 2,
       },
       {
-        href: '',
+        href: PAYMENT_ROUTE,
         text: 'Оплата',
         id: 3,
       },
@@ -78,7 +78,7 @@ export const store = {
       href: '',
       image: {
         url: 'icons/menu/basket.png',
-        height: 30,
+        height: 40,
       },
       id: 1,
     }

@@ -1,10 +1,10 @@
-import React, {useContext} from 'react';
+import React, {FC, useContext} from 'react';
 import Navigator from "../../components/navigator/Navigator";
 import {Context} from "../../../index";
 import New from "./new/New";
 import styles from './NewsPage.module.scss';
 
-const NewsPage = () => {
+const NewsPage: FC = () => {
   const { news } = useContext(Context);
   const { navigator, items } = news;
 

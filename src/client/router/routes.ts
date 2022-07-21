@@ -6,6 +6,7 @@ import {
   DELIVERY_ROUTE,
   DEVICE_ROUTE,
   NEWS_ROUTE,
+  PAYMENT_ROUTE,
   SHOP_ROUTE
 } from "../constants/routes";
 import BasketPage from "../pages/basket/BasketPage";
@@ -14,6 +15,7 @@ import DevicePage from "../pages/device/DevicePage";
 import NewsPage from "../pages/news/NewsPage";
 import AboutPage from "../pages/about/AboutPage";
 import DeliveryPage from "../pages/delivery/DeliveryPage";
+import PaymentPage from "../pages/payment/PaymentPage";
 
 export const privateRoutes = [
   {
@@ -46,5 +48,9 @@ export const publicRoutes = [
   {
     path: DELIVERY_ROUTE,
     element: DeliveryPage,
-  }
+  },
+  {
+    path: PAYMENT_ROUTE,
+    element: PaymentPage,
+  },
 ];

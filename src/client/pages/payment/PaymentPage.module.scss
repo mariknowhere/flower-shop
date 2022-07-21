@@ -1,0 +1,67 @@
+@import "src/client/styles/variables";
+@import "src/client/styles/colors";
+
+.payment {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    max-width: $block-max-width;
+    margin: 0 auto;
+    cursor: default;
+  }
+
+  &-topic {
+    margin: 25px 0 10px;
+  }
+
+  &-table,
+  &-table-category,
+  &-table-category-value {
+    border: 1px solid #ddd;
+  }
+
+  &-table-row {
+    &:hover {
+      background-color: $color-gray-50;
+    }
+  }
+
+  &-title {
+    margin: 20px 0 3px;
+  }
+
+  &-list {
+    padding-left: 25px;
+  }
+
+  &-item {
+    position: relative;
+    margin: 2px 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border: 1px solid $color-gray-40;
+      background-color: $color-black-10;
+      border-radius: 100%;
+      top: 7px;
+      left: -15px;
+      transition: all .3s;
+      pointer-events: none;
+    }
+
+    &:hover {
+      &::before {
+        border: 1px solid $color-geo;
+        background-color: $color-geo;
+      }
+    }
+
+    &-text {
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
+}

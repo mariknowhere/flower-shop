@@ -5,3 +5,4 @@ export const DEVICE_ROUTE = '/device';
 export const NEWS_ROUTE = '/news';
 export const ABOUT_ROUTE = '/about';
 export const DELIVERY_ROUTE = '/delivery';
+export const PAYMENT_ROUTE = '/payment';

@@ -30,9 +30,9 @@ export default class DeliveryStore {
         ],
       },
       body: {
-        deliveryInCity: 'Доставка курьером ',
-        deliveryInCityLate: 'по Полоцку и Новополоцку',
-        inCityFirstValues: [
+        title: 'Доставка курьером ',
+        titleAddition: 'по Полоцку и Новополоцку',
+        categoryValuesPrimary: [
           {
             categoryValue: '1',
           },
@@ -40,8 +40,8 @@ export default class DeliveryStore {
             categoryValue: 'На сумму выше 80 рублей'
           },
         ],
-        price: 'Бесплатно',
-        inCitySecondValues: [
+        categoryValueAddition: 'Бесплатно',
+        categoryValuesSecondary: [
           {
             categoryValue: '2',
           },
@@ -52,13 +52,8 @@ export default class DeliveryStore {
             categoryValue: 'По тарифам «Яндекс Такси»',
           },
         ],
-        inCitySecond: {
-          number: '2',
-          delivery: 'На сумму ниже 80 рублей',
-          price: '10 рублей',
-        },
-        deliveryInRegion: 'Доставка в регионы ',
-        deliveryInRegionLate: 'обсуждается индивидуально',
+        titleSecondary: 'Доставка в регионы ',
+        titleSecondaryAddition: 'обсуждается индивидуально',
       }
     }
     this.description = `
