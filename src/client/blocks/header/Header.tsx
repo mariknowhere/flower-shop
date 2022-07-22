@@ -18,7 +18,7 @@ const Header: FC<IHeaderProps> = ({ image, search, socials, socialNumbers  }) =>
           </div>
           <div className={styles['header-socials-wrapper']}>
             {socials.map((social) => (
-              <Social {...social} />
+              <Social {...social} key={social.id} />
             ))}
           </div>
           <div className={styles['header-socials-number-wrapper']}>
@@ -27,6 +27,7 @@ const Header: FC<IHeaderProps> = ({ image, search, socials, socialNumbers  }) =>
                 {...social}
                 className={styles['header-social-number']}
                 classNameImage={styles['header-social-number-image']}
+                key={social.id}
               />
             ))}
           </div>

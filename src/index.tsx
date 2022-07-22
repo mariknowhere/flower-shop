@@ -5,6 +5,7 @@ import AboutStore from "./client/store/AboutStore";
 import DeliveryStore from "./client/store/DeliveryStore";
 import NewsStore from "./client/store/NewsStore";
 import PaymentStore from "./client/store/PaymentStore";
+import DeviceStore from "./client/store/DeviceStore";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,6 +16,7 @@ export const Context = createContext({
   delivery: new DeliveryStore(),
   news: new NewsStore(),
   payment: new PaymentStore(),
+  device: new DeviceStore(),
 })
 
 const { Provider } = Context;
@@ -25,6 +27,7 @@ root.render(
       delivery: new DeliveryStore(),
       news: new NewsStore(),
       payment: new PaymentStore(),
+      device: new DeviceStore(),
     }}>
       <CommonPage />
     </Provider>

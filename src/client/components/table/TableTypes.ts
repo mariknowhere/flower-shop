@@ -1,6 +1,7 @@
 export interface IItemProps {
   category?: string;
   categoryValue?: string;
+  id: number;
 }
 
 export interface IHeadProps {

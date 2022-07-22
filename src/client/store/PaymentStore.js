@@ -20,12 +20,15 @@ export default class PaymentStore {
         items: [
           {
             category: '№',
+            id: 1,
           },
           {
             category: 'Вид оплаты',
+            id: 2,
           },
           {
             category: 'Инструкция по оплате',
+            id: 3,
           },
         ],
       },
@@ -34,23 +37,29 @@ export default class PaymentStore {
         categoryValuesPrimary: [
           {
             categoryValue: '1',
+            id: 1,
           },
           {
-            categoryValue: 'Наличный расчет при получении товара'
+            categoryValue: 'Наличный расчет при получении товара',
+            id: 2,
           },
           {
-            categoryValue: '-'
+            categoryValue: '-',
+            id: 3,
           },
         ],
         categoryValuesSecondary: [
           {
             categoryValue: '2',
+            id: 1,
           },
           {
             categoryValue: 'Безналичный расчет при получении товара',
+            id: 2,
           },
           {
             categoryValue: '-',
+            id: 3,
           },
         ],
         inCitySecond: {

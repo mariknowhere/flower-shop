@@ -34,7 +34,7 @@ export const publicRoutes = [
     element: ShopPage,
   },
   {
-    path: DEVICE_ROUTE,
+    path: DEVICE_ROUTE + '/:id',
     element: DevicePage,
   },
   {

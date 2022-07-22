@@ -17,7 +17,7 @@ const Social: FC<ISocialProps> = ({
     <a target='_blank' href={href} className={classNames(className, styles['social'])} rel='noreferrer' key={id}>
       {image && <Image {...image} className={classNameImage} />}
       {images && images.map((image) => (
-        <Image {...image} className={classNameImage} />
+        <Image {...image} className={classNameImage} key={image.url} />
       ))}
       {text}
     </a>

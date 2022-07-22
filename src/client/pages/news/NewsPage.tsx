@@ -13,7 +13,7 @@ const NewsPage: FC = () => {
       <Navigator {...navigator} />
       <div className={styles['news-container']}>
         {items.map(item => (
-          <New {...item} />
+          <New {...item} id={item.id} />
         ))}
       </div>
     </div>

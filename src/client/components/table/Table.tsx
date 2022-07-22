@@ -15,8 +15,8 @@ const Table: FC<ITableProps> = ({
     <table className={classNames(className, styles.table)}>
       <thead>
         <tr>
-          {head.items.map(({ category }) => (
-            <th className={classNames(classNameCategory, styles['table-category'])}>{category}</th>
+          {head.items.map(({ category, id }) => (
+            <th className={classNames(classNameCategory, styles['table-category'])} key={id}>{category}</th>
           ))}
         </tr>
       </thead>
@@ -28,8 +28,8 @@ const Table: FC<ITableProps> = ({
           </td>
         </tr>
         <tr className={classNameRow}>
-          {body.categoryValuesPrimary.map(({ categoryValue }) => (
-            <td className={classNames(classNameCategoryValue, styles['table-category-value'])}>{categoryValue}</td>
+          {body.categoryValuesPrimary.map(({ categoryValue, id }) => (
+            <td className={classNames(classNameCategoryValue, styles['table-category-value'])} key={id}>{categoryValue}</td>
             ))}
           {body.categoryValueAddition && (
             <td className={styles['table-category-value']}>
@@ -38,8 +38,8 @@ const Table: FC<ITableProps> = ({
           )}
         </tr>
         <tr className={classNameRow}>
-          {body.categoryValuesSecondary?.map(({ categoryValue }) => (
-            <td className={classNames(classNameCategoryValue, styles['table-category-value'])}>{categoryValue}</td>
+          {body.categoryValuesSecondary?.map(({ categoryValue, id }) => (
+            <td className={classNames(classNameCategoryValue, styles['table-category-value'])} key={id}>{categoryValue}</td>
           ))}
         </tr>
         <tr className={classNameRow}>

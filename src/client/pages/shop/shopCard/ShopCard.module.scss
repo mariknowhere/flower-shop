@@ -1,0 +1,43 @@
+@import "src/client/styles/colors";
+@import "src/client/styles/variables";
+
+.shop-card {
+  display: flex;
+  flex-direction: column;
+
+  &-image {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &-title {
+    cursor: pointer;
+    font-size: 15px !important;
+    margin: 10px 0;
+  }
+
+  &-bottom {
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &-price {
+    font-weight: 600 !important;
+    color: $color-green-10;
+  }
+
+  &-button {
+    border: 1px solid $color-green-10;
+    background-color: $color-white;
+    color: $color-green-10;
+    line-height: 18px;
+    padding: 3px 8px;
+    transition: all $animation-duration linear;
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-green-10;
+    }
+  }
+}

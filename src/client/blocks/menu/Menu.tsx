@@ -11,8 +11,8 @@ const Menu: FC<IMenuProps> = ({ items, social }) => {
         <div className={styles['menu-wrapper']}>
           <ul className={styles['menu-list']}>
             {items.map(({ href, text, id }) => (
-              <li className={styles['menu-list-item-wrapper']}>
-                <Link to={href} key={id} className={styles['menu-list-item']}>{text}</Link>
+              <li className={styles['menu-list-item-wrapper']} key={id}>
+                <Link to={href} className={styles['menu-list-item']}>{text}</Link>
               </li>
             ))}
           </ul>

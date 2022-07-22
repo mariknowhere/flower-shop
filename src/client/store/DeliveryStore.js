@@ -20,12 +20,15 @@ export default class DeliveryStore {
         items: [
           {
             category: '№',
+            id: 1,
           },
           {
             category: 'Доставка',
+            id: 2,
           },
           {
             category: 'Стоимость доставки',
+            id: 3,
           },
         ],
       },
@@ -35,21 +38,26 @@ export default class DeliveryStore {
         categoryValuesPrimary: [
           {
             categoryValue: '1',
+            id: 1,
           },
           {
-            categoryValue: 'На сумму выше 80 рублей'
+            categoryValue: 'На сумму выше 80 рублей',
+            id: 2,
           },
         ],
         categoryValueAddition: 'Бесплатно',
         categoryValuesSecondary: [
           {
             categoryValue: '2',
+            id: 1,
           },
           {
             categoryValue: 'На сумму ниже 80 рублей',
+            id: 2,
           },
           {
             categoryValue: 'По тарифам «Яндекс Такси»',
+            id: 3,
           },
         ],
         titleSecondary: 'Доставка в регионы ',
