@@ -22,7 +22,6 @@ interface IReviewProps {
 }
 
 export interface IAboutShopProps {
-  id: number;
   title: ITitleProps;
   image: IImageProps;
   geo: IGeoProps;

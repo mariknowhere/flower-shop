@@ -14,7 +14,7 @@ const ShopCard: FC<IShopCardProps> = ({ title, image, price, id }) => {
   const onClickHandler = () => navigate(`${DEVICE_ROUTE}/${id}`)
 
   return (
-    <div className={styles['shop-card']} key={id}>
+    <div className={styles['shop-card']}>
       <Image {...image} className={styles['shop-card-image']} />
       <div onClick={onClickHandler}>
         <Text children={title} className={styles['shop-card-title']} variant={TextVariantEnum.S} />

@@ -23,7 +23,7 @@ const AboutPage: FC = () => {
       <div className={styles['about-container']}>
         <Text children={title} className={styles['about-title']} />
         {shops.map((shop) => (
-          <AboutShop {...shop} onClick={onClickHandler} isShopOpen={isShopOpen} id={shop.id} />
+          <AboutShop {...shop} onClick={onClickHandler} isShopOpen={isShopOpen} key={shop.id} />
         ))}
       </div>
     </div>

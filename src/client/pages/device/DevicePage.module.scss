@@ -1,3 +1,153 @@
-.device {
+@import "src/client/styles/colors";
+@import "src/client/styles/variables";
 
+.device {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    max-width: $block-max-width;
+    margin: 0 auto;
+  }
+
+  &-title {
+    margin: 20px 0;
+    font-size: 36px;
+    font-weight: 200;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+  }
+
+  &-image {
+    max-width: 600px;
+    padding: 0 10px;
+  }
+
+  &-info {
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  &-price {
+    color: $color-green-10;
+    font-weight: 600;
+  }
+
+  &-car {
+    position: absolute;
+    top: 8px;
+  }
+
+  &-delivery {
+    padding: 15px 40px;
+    color: $color-gray-15;
+    font-weight: bold;
+
+    &-wrapper {
+      position: relative;
+      margin-bottom: 10px;
+    }
+  }
+
+  &-button {
+    width: 100%;
+    border: 1px solid $color-green-10;
+    background-color: $color-green-10;
+    color: $color-white;
+    line-height: 40px;
+    font-size: 20px;
+    padding: 3px 8px;
+    transition: all $animation-duration linear;
+
+    &:hover {
+      color: $color-green-10;
+      background-color: $color-white;
+    }
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:not(:last-child){
+      margin-bottom: 8px;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin: 20px 0;
+    }
+
+    &-image {
+      margin-right: 8px;
+    }
+
+    &-category {
+      color: $color-gray-15;
+      margin-right: 3px;
+    }
+
+    &-value {
+      color: $color-green-10;
+    }
+  }
+
+  &-payment {
+    width: 80px;
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    &-link {
+      color: $color-green-10;
+      font-size: 16px;
+      border-bottom: 1px dashed #60967D;
+      margin-left: 10px;
+    }
+  }
+
+  &-characteristics {
+    display: flex;
+    flex-direction: column;
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    &-title {
+      width: 80px;
+    }
+  }
+
+  &-characteristic {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2px 0;
+    color: $color-gray-15;
+
+    &-value {
+      margin-right: 5px;
+    }
+
+    &-count {
+      background-color: #F4F4F4;
+      color: #8B8EAB;
+      font-weight: bold;
+      padding: 1px 6px;
+      border-radius: 50%;
+    }
+  }
 }

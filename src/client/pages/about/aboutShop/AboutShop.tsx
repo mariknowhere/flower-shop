@@ -9,7 +9,6 @@ import {IAboutShopProps} from "./AboutShopTypes";
 import Button from "../../../components/button/Button";
 
 const AboutShop: FC <IAboutShopProps> = ({
-  id,
   image,
   title,
   geo,
@@ -21,7 +20,7 @@ const AboutShop: FC <IAboutShopProps> = ({
   isShopOpen,
 }) => {
   return (
-    <div key={id} className={styles['about-shop']}>
+    <div className={styles['about-shop']}>
       <div className={styles['about-shop-image']}>
         <Image {...image} />
       </div>

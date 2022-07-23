@@ -2,6 +2,20 @@ import {makeAutoObservable} from "mobx";
 
 export default class DeviceStore {
   constructor() {
+    this._navigator = {
+      title: 'Каталог цветов',
+      socialBackText: {
+        text: 'Главная',
+        href: '/'
+      },
+      socialBackImage: {
+        image: {
+          url: 'icons/less.png',
+          height: 40,
+        },
+        href: '/',
+      },
+    }
     this._types = [
       {
         id: 1,
@@ -105,5 +119,9 @@ export default class DeviceStore {
 
   get selectedType() {
     return this._selectedType
+  }
+
+  get navigator() {
+    return this._navigator
   }
 }

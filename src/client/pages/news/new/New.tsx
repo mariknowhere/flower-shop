@@ -7,9 +7,9 @@ import styles from './New.module.scss';
 import Text from "../../../components/text/Text";
 import Button from "../../../components/button/Button";
 
-const New: FC<INewProps> = ({ title, date, id, mainImage, description, review }) => {
+const New: FC<INewProps> = ({ title, date, mainImage, description, review }) => {
   return (
-    <div className={styles.new} key={id}>
+    <div className={styles.new}>
       <Image {...mainImage} className={styles['new-image']} />
       <div className={styles['new-info']}>
         <Title children={title} variant={TitleVariantEnum.H3} />

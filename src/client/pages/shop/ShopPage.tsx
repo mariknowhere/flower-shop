@@ -27,7 +27,7 @@ const ShopPage = observer(() => {
       </div>
       <div className={styles['shop-container']}>
         <div className={styles['shop-cards']}>
-          {devices.map(device => <ShopCard {...device} />)}
+          {devices.map(device => <ShopCard {...device} key={device.id} />)}
         </div>
       </div>
     </div>
