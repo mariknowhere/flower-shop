@@ -62,4 +62,16 @@
       }
     }
   }
+
+  &-button {
+    background-color: $color-white;
+    color: $color-green-10;
+    line-height: 18px;
+    transition: all $animation-duration linear;
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-green-10;
+    }
+  }
 }

@@ -32,13 +32,32 @@ interface IEmailProps {
   emailHref: string;
 }
 
-export interface IHamburgerMenuProps extends ICircleProps {
-  menuActive: boolean;
-  setMenuActive: Dispatch<SetStateAction<boolean>>;
-  header: IHeaderProps;
+interface IBodyProps {
   geo: IGeoProps;
   schedule: IScheduleProps;
   mobile: IMobilePhoneProps;
   email: IEmailProps;
-  id: number;
+}
+
+interface IInputProps {
+  name: string;
+  placeholder: string;
+  type: string;
+  image: IImageProps
+}
+
+interface IAuthProps {
+  login: IInputProps;
+  password: IInputProps;
+  checkbox: string;
+  buttonText: string;
+  secondaryButtonText: string;
+}
+
+export interface IHamburgerMenuProps extends ICircleProps {
+  menuActive?: boolean;
+  setMenuActive?: Dispatch<SetStateAction<boolean>>;
+  body?: IBodyProps;
+  auth?: IAuthProps;
+  header: IHeaderProps;
 }

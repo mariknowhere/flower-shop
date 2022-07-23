@@ -5,8 +5,10 @@ import Image from "../../../components/image/Image";
 import Text from "../../../components/text/Text";
 import {buy} from "../../../constants/shop";
 import {TextVariantEnum} from "../../../components/text/TextTypes";
-import { useNavigate } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {DEVICE_ROUTE} from "../../../constants/routes";
+import SecondaryButton from "../../../components/button/secondaryButton/SecondaryButton";
+import {SecondaryButtonEnum} from "../../../components/button/secondaryButton/SecondaryButtonTypes";
 
 
 const ShopCard: FC<IShopCardProps> = ({ title, image, price, id }) => {
@@ -21,9 +23,7 @@ const ShopCard: FC<IShopCardProps> = ({ title, image, price, id }) => {
       </div>
       <div className={styles['shop-card-bottom']}>
         <Text children={price} className={styles['shop-card-price']} />
-        <button className={styles['shop-card-button']}>
-          <span>{buy}</span>
-        </button>
+        <SecondaryButton buttonText={buy} className={styles['shop-card-button']} type={SecondaryButtonEnum.Secondary} />
       </div>
     </div>
   );

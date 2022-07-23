@@ -81,6 +81,6 @@ export const store = {
         height: 40,
       },
       id: 1,
-    }
+    },
   }
 }

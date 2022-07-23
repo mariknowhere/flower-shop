@@ -4,9 +4,9 @@ import {
   ADMIN_ROUTE,
   BASKET_ROUTE,
   DELIVERY_ROUTE,
-  DEVICE_ROUTE,
+  DEVICE_ROUTE, LOGIN_ROUTE,
   NEWS_ROUTE,
-  PAYMENT_ROUTE,
+  PAYMENT_ROUTE, REGISTRATION_ROUTE,
   SHOP_ROUTE
 } from "../constants/routes";
 import BasketPage from "../pages/basket/BasketPage";
@@ -16,6 +16,7 @@ import NewsPage from "../pages/news/NewsPage";
 import AboutPage from "../pages/about/AboutPage";
 import DeliveryPage from "../pages/delivery/DeliveryPage";
 import PaymentPage from "../pages/payment/PaymentPage";
+import AuthPage from "../pages/auth/AuthPage";
 
 export const privateRoutes = [
   {
@@ -30,20 +31,12 @@ export const privateRoutes = [
 
 export const publicRoutes = [
   {
-    path: SHOP_ROUTE,
-    element: ShopPage,
-  },
-  {
-    path: DEVICE_ROUTE + '/:id',
-    element: DevicePage,
+    path: ABOUT_ROUTE,
+    element: AboutPage,
   },
   {
     path: NEWS_ROUTE,
     element: NewsPage,
-  },
-  {
-    path: ABOUT_ROUTE,
-    element: AboutPage,
   },
   {
     path: DELIVERY_ROUTE,
@@ -52,5 +45,21 @@ export const publicRoutes = [
   {
     path: PAYMENT_ROUTE,
     element: PaymentPage,
+  },
+  {
+    path: SHOP_ROUTE,
+    element: ShopPage,
+  },
+  {
+    path: DEVICE_ROUTE + '/:id',
+    element: DevicePage,
+  },
+  {
+    path: LOGIN_ROUTE,
+    element: AuthPage,
+  },
+  {
+    path: REGISTRATION_ROUTE,
+    element: AuthPage,
   },
 ];

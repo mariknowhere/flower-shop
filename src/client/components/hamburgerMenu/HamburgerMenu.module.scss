@@ -38,7 +38,7 @@
     align-items: center;
     width: 400px;
     height: 100%;
-    background-color: $color-orange;
+    background-color: $color-white;
   }
 
   &-header {
@@ -55,12 +55,15 @@
   }
 
   &-title {
+    display: flex;
+    justify-content: start;
+    flex-grow: 1;
     font-weight: normal !important;
   }
 
   &-close-icon {
     cursor: pointer;
-    padding-left: 20px;
+    padding-right: 10px;
   }
 
   &-body {
@@ -117,7 +120,6 @@
       color: $color-black-10;
       transition: color $animation-duration linear;
 
-
       &:hover {
         color: $color-hover;
       }
@@ -132,5 +134,60 @@
         color: $color-hover !important;
       }
     }
+  }
+
+  &-auth {
+    width: 100%;
+    padding: 0 35px;
+  }
+
+  &-input {
+    width: 100%;
+    font-size: 15px;
+    line-height: 34px;
+    color: #263238;
+    background-color: transparent;
+    border: 1px solid $color-gray-30;
+    border-radius: 4px;
+    box-shadow: none;
+    padding: 0 30px 0 10px;
+
+    &-wrapper {
+      position: relative;
+      margin: 20px 0 15px;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    pointer-events: none;
+  }
+
+  &-checkbox {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 20px 0;
+
+    &-input {
+      cursor: pointer;
+      width: 15px;
+      border-radius: 4px;
+    }
+
+    &-label {
+      color: $color-geo;
+      padding-left: 8px;
+      cursor: pointer;
+    }
+  }
+
+  &-button {
+    width: 100%;
+    line-height: 40px;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
 }

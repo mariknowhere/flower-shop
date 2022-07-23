@@ -1,0 +1,28 @@
+@import "src/client/styles/colors";
+@import "src/client/styles/variables";
+
+.secondary-button {
+  padding: 3px 8px;
+  border: 1px solid $color-green-10;
+  transition: all $animation-duration linear;
+
+  &-primary {
+    background-color: $color-green-10;
+    color: $color-white;
+
+    &:hover {
+      color: $color-green-10;
+      background-color: $color-white;
+    }
+  }
+
+  &-secondary {
+    background-color: $color-white;
+    color: $color-green-10;
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-green-10;
+    }
+  }
+}

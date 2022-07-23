@@ -1,4 +1,4 @@
 export interface ICircleProps {
-  isShopOpen: boolean;
+  isShopOpen?: boolean;
   className?: string;
 }

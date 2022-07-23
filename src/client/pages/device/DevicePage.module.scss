@@ -54,18 +54,8 @@
 
   &-button {
     width: 100%;
-    border: 1px solid $color-green-10;
-    background-color: $color-green-10;
-    color: $color-white;
     line-height: 40px;
     font-size: 20px;
-    padding: 3px 8px;
-    transition: all $animation-duration linear;
-
-    &:hover {
-      color: $color-green-10;
-      background-color: $color-white;
-    }
   }
 
   &-item {

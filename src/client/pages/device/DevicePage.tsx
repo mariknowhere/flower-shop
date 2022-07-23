@@ -10,6 +10,7 @@ import Navigator from "../../components/navigator/Navigator";
 import {Context} from "../../../index";
 import {TitleVariantEnum} from "../../components/title/TitleTypes";
 import {TextVariantEnum} from "../../components/text/TextTypes";
+import SecondaryButton from "../../components/button/secondaryButton/SecondaryButton";
 
 const radix = 10;
 
@@ -70,9 +71,7 @@ const DevicePage = () => {
                 <Image url={'https://zakazcvetov.by/static/front/img/view/delivery.svg'} className={styles['device-car']} />
                 <Text children={'Бесплатная доставка'} variant={TextVariantEnum.S} className={styles['device-delivery']} />
               </div>
-              <button className={styles['device-button']}>
-                <span>{buy}</span>
-              </button>
+              <SecondaryButton buttonText={buy} className={styles['device-button']} />
               <div className={styles['device-item-wrapper']}>
                 {items.map(({image, category, value}) => (
                   <div key={category} className={styles['device-item']}>
