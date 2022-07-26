@@ -1,4 +1,10 @@
-import {ABOUT_ROUTE, DELIVERY_ROUTE, NEWS_ROUTE, PAYMENT_ROUTE, SHOP_ROUTE} from "../constants/routes";
+import {
+  ABOUT_ROUTE,
+  DELIVERY_ROUTE,
+  NEWS_ROUTE,
+  PAYMENT_ROUTE,
+  SHOP_ROUTE
+} from "../constants/routes";
 
 export const store = {
   headerData: {

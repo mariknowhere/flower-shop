@@ -1,6 +1,6 @@
 export default class NewsStore {
   constructor() {
-    this.navigator = {
+    this._navigator = {
       title: 'Список новостей',
       socialBackText: {
         text: 'Главная',
@@ -14,7 +14,7 @@ export default class NewsStore {
         href: '/',
       },
     }
-    this.items = [
+    this._items = [
       {
         id: 1,
         title: 'Скидки 30% в честь 1 августа!',
@@ -55,5 +55,13 @@ export default class NewsStore {
         },
       },
     ]
+  }
+
+  get navigator() {
+    return this._navigator
+  }
+
+  get items() {
+    return this._items
   }
 }

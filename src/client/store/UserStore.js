@@ -2,12 +2,12 @@ import {makeAutoObservable} from "mobx";
 
 export default class UserStore {
   constructor() {
-    this._isAuth = false
+    this._isAuth = true
     this._user = {}
     this._hamburgerMenu = {
       header: {
         closeImage: {
-          url: 'icons/about/close.png',
+          url: 'icons/close.png',
           height: 45,
         },
         title: 'Авторизация',
@@ -35,7 +35,12 @@ export default class UserStore {
             height: 25,
           },
         },
-        checkbox: 'Запомнить меня на этом устройстве',
+        checkbox: {
+          text: 'Запомнить меня на этом устройстве',
+          type: 'checkbox',
+          name: 'user_remember',
+          id: 'user_remember',
+        },
         buttonText: 'Войти',
         secondaryButtonText: 'Регистрация',
       },

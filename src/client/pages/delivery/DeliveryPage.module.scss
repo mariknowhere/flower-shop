@@ -2,9 +2,6 @@
 @import "src/client/styles/colors";
 
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
   border-top: 2px solid $color-hr;
 }
 
@@ -25,6 +22,10 @@ hr {
     &:nth-child(odd) {
       background-color: $color-gray-50;
     }
+  }
+
+  &-divider {
+    margin: 20px 0;
   }
 
   &-description {

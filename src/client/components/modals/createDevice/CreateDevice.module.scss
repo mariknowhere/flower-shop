@@ -1,0 +1,11 @@
+@import "src/client/styles/colors";
+@import "src/client/styles/variables";
+
+.device-modal {
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

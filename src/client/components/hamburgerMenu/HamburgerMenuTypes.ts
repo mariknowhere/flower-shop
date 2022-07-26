@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
-import {IImageProps} from "../image/ImageTypes";
-import {ICircleProps} from "../circle/CircleTypes";
+import { IImageProps } from "../image/ImageTypes";
+import { ICircleProps } from "../circle/CircleTypes";
+import { IInputProps } from "../input/InputTypes";
 
 interface IHeaderProps {
   phoneImage: IImageProps;
@@ -39,17 +40,14 @@ interface IBodyProps {
   email: IEmailProps;
 }
 
-interface IInputProps {
-  name: string;
-  placeholder: string;
-  type: string;
-  image: IImageProps
+interface ICheckboxProps extends Omit<IInputProps, 'image'> {
+  text: string;
 }
 
 interface IAuthProps {
   login: IInputProps;
   password: IInputProps;
-  checkbox: string;
+  checkbox: ICheckboxProps;
   buttonText: string;
   secondaryButtonText: string;
 }

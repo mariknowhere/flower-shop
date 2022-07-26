@@ -11,6 +11,7 @@ import Social from "../social/Social";
 import Circle from "../circle/Circle";
 import SecondaryButton from "../button/secondaryButton/SecondaryButton";
 import {SecondaryButtonEnum} from "../button/secondaryButton/SecondaryButtonTypes";
+import Input from "../input/Input";
 
 const HamburgerMenu: FC<IHamburgerMenuProps> = ({
   menuActive,
@@ -70,32 +71,16 @@ const HamburgerMenu: FC<IHamburgerMenuProps> = ({
         {auth && (
           <div className={styles['hamburger-menu-auth']}>
             <form>
-              <div className={styles['hamburger-menu-input-wrapper']}>
-                <input
-                  type={auth.login.type}
-                  name={auth.login.name}
-                  placeholder={auth.login.placeholder}
-                  className={styles['hamburger-menu-input']}
-                />
-                <Image {...auth.login.image} className={styles['hamburger-menu-icon']} />
-              </div>
-              <div className={styles['hamburger-menu-input-wrapper']}>
-                <input
-                  type={auth.password.type}
-                  name={auth.password.name}
-                  placeholder={auth.password.placeholder}
-                  className={styles['hamburger-menu-input']}
-                />
-                <Image {...auth.password.image} className={styles['hamburger-menu-icon']} />
-              </div>
+              <Input {...auth.login} />
+              <Input {...auth.password} />
               <div className={styles['hamburger-menu-checkbox']}>
                 <input
-                  name={auth.checkbox}
-                  id={auth.checkbox}
-                  type="checkbox"
+                  name={auth.checkbox.name}
+                  id={auth.checkbox.name}
+                  type={auth.checkbox.type}
                   className={styles['hamburger-menu-checkbox-input']}
                 />
-                <label className={styles['hamburger-menu-checkbox-label']} htmlFor={auth.checkbox}>{auth.checkbox}</label>
+                <label className={styles['hamburger-menu-checkbox-label']} htmlFor={auth.checkbox.name}>{auth.checkbox.text}</label>
               </div>
               <SecondaryButton buttonText={auth.buttonText} className={styles['hamburger-menu-button']}  />
               <SecondaryButton

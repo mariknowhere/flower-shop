@@ -1,6 +1,6 @@
 export default class PaymentStore {
   constructor() {
-    this.navigator = {
+    this._navigator = {
       title: 'Способы оплаты',
       socialBackText: {
         text: 'Главная',
@@ -14,8 +14,8 @@ export default class PaymentStore {
         href: '/',
       },
     }
-    this.topic = 'Оплата'
-    this.table = {
+    this._topic = 'Оплата'
+    this._table = {
       head: {
         items: [
           {
@@ -71,8 +71,8 @@ export default class PaymentStore {
         titleSecondaryAddition: 'обсуждается индивидуально ',
       }
     }
-    this.title = 'Для оформления заказа через сайт Вам необходимо:'
-    this.list = [
+    this._title = 'Для оформления заказа через сайт Вам необходимо:'
+    this._list = [
       {
         text: 'выбрать понравившийся товар',
         id: 1,
@@ -102,5 +102,25 @@ export default class PaymentStore {
         id: 7,
       },
     ]
+  }
+
+  get navigator() {
+    return this._navigator
+  }
+
+  get topic() {
+    return this._topic
+  }
+
+  get table() {
+    return this._table
+  }
+
+  get title() {
+    return this._title
+  }
+
+  get list() {
+    return this._list
   }
 }

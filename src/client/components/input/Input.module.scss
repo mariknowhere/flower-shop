@@ -1,0 +1,25 @@
+@import "src/client/styles/colors";
+
+.input {
+  width: 100%;
+  font-size: 15px;
+  line-height: 34px;
+  color: #263238;
+  background-color: transparent;
+  border: 1px solid $color-gray-30;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 0 30px 0 10px;
+
+  &-wrapper {
+    position: relative;
+    margin: 20px 0 15px;
+  }
+
+  &-image {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    pointer-events: none;
+  }
+}

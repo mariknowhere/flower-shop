@@ -17,7 +17,7 @@ const DeliveryPage: FC = () => {
       <div className={styles['delivery-container']}>
         <Title children={title} className={styles['delivery-title']} />
         <Table {...table} classNameRow={styles['delivery-table-row']} />
-        <hr/>
+        <hr className={styles['delivery-divider']}/>
         <Text children={description} variant={TextVariantEnum.S} className={styles['delivery-description']} />
       </div>
     </div>

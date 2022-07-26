@@ -7,6 +7,7 @@ import NewsStore from "./client/store/NewsStore";
 import PaymentStore from "./client/store/PaymentStore";
 import DeviceStore from "./client/store/DeviceStore";
 import UserStore from "./client/store/UserStore";
+import AdminStore from "./client/store/AdminStore";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,6 +20,7 @@ export const Context = createContext({
   payment: new PaymentStore(),
   device: new DeviceStore(),
   user: new UserStore(),
+  admin: new AdminStore(),
 })
 
 const { Provider } = Context;
@@ -31,6 +33,7 @@ root.render(
       payment: new PaymentStore(),
       device: new DeviceStore(),
       user: new UserStore(),
+      admin: new AdminStore(),
     }}>
       <CommonPage />
     </Provider>

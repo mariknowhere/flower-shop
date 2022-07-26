@@ -1,6 +1,6 @@
 export default class DeliveryStore {
   constructor() {
-    this.navigator = {
+    this._navigator = {
       title: 'Доставка цветов',
       socialBackText: {
         text: 'Главная',
@@ -14,8 +14,8 @@ export default class DeliveryStore {
         href: '/',
       },
     }
-    this.title = 'Стоимость и условия доставки'
-    this.table = {
+    this._title = 'Стоимость и условия доставки'
+    this._table = {
       head: {
         items: [
           {
@@ -64,9 +64,25 @@ export default class DeliveryStore {
         titleSecondaryAddition: 'обсуждается индивидуально',
       }
     }
-    this.description = `
+    this._description = `
  Доставка цветов осуществляется через «Яндекс Такси» в наше рабочее время. 
  При заказе, укажите адрес, дату и желаемый интервал времени для доставки. 
  Таксист привезет заказ вовремя, цветы будут свежими, а получатель будет очень счастлив!`
+  }
+
+  get navigator() {
+    return this._navigator
+  }
+
+  get title() {
+    return this._title
+  }
+
+  get table() {
+    return this._table
+  }
+
+  get description() {
+    return this._description
   }
 }

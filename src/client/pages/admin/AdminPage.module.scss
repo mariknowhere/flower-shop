@@ -1,0 +1,10 @@
+@import "src/client/styles/variables";
+
+.admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: $block-max-width;
+  margin: 0 auto;
+  padding: 60px 0;
+}
