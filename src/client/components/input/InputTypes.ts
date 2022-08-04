@@ -1,9 +1,11 @@
 import {IImageProps} from "../image/ImageTypes";
 
 export interface IInputProps {
-  type: string;
-  name: string;
   image: IImageProps
+  name?: string;
+  type?: string;
   placeholder?: string;
   className?: string;
+  list?: string;
+  onClick?: () => void;
 }
