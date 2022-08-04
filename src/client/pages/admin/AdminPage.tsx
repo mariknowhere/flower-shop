@@ -3,7 +3,7 @@ import SecondaryButton from "../../components/button/secondaryButton/SecondaryBu
 import {Context} from "../../../index";
 import styles from './AdminPage.module.scss';
 import CreateDevice from "../../components/modals/createDevice/CreateDevice";
-import CreateNew from "../../components/modals/createNew/CreateNew";
+import CreateNews from "../../components/modals/createNews/CreateNews";
 
 const AdminPage = () => {
   const [isNewModalVisible, setNewModalVisible] = useState(false);
@@ -27,7 +27,7 @@ const AdminPage = () => {
         className={styles['admin-button']}
         onClick={onDeviceCreateButtonClick}
       />
-      <CreateNew isDeviceModalVisible={isNewModalVisible} setDeviceModalVisible={setNewModalVisible} />
+      <CreateNews isDeviceModalVisible={isNewModalVisible} setDeviceModalVisible={setNewModalVisible} />
       <CreateDevice isDeviceModalVisible={isDeviceModalVisible} setDeviceModalVisible={setDeviceModalVisible} />
     </div>
   );

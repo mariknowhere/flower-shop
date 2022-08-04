@@ -12,6 +12,7 @@ import Circle from "../circle/Circle";
 import SecondaryButton from "../button/secondaryButton/SecondaryButton";
 import {SecondaryButtonEnum} from "../button/secondaryButton/SecondaryButtonTypes";
 import Input from "../input/Input";
+import {InputTypeEnum} from "../input/InputTypes";
 
 const HamburgerMenu: FC<IHamburgerMenuProps> = ({
   menuActive,
@@ -72,12 +73,12 @@ const HamburgerMenu: FC<IHamburgerMenuProps> = ({
           <div className={styles['hamburger-menu-auth']}>
             <form>
               <Input {...auth.login} />
-              <Input {...auth.password} />
+              <Input {...auth.password} type={InputTypeEnum.Password} />
               <div className={styles['hamburger-menu-checkbox']}>
                 <input
                   name={auth.checkbox.name}
                   id={auth.checkbox.name}
-                  type={auth.checkbox.type}
+                  type={InputTypeEnum.Checkbox}
                   className={styles['hamburger-menu-checkbox-input']}
                 />
                 <label className={styles['hamburger-menu-checkbox-label']} htmlFor={auth.checkbox.name}>{auth.checkbox.text}</label>

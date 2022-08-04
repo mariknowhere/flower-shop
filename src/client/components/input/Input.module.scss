@@ -1,5 +1,11 @@
 @import "src/client/styles/colors";
 
+::-webkit-calendar-picker-indicator {
+  width: 50%;
+  cursor: pointer;
+  opacity: 0;
+}
+
 .input {
   width: 100%;
   font-size: 15px;
@@ -13,7 +19,7 @@
 
   &-wrapper {
     position: relative;
-    margin: 20px 0 15px;
+    margin: 10px 0;
   }
 
   &-image {

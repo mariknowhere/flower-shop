@@ -17,7 +17,7 @@ const ShopCard: FC<IShopCardProps> = ({ title, image, price, id }) => {
 
   return (
     <div className={styles['shop-card']}>
-      <Image {...image} className={styles['shop-card-image']} />
+      <Image {...image} className={styles['shop-card-image']} onClick={onClickHandler} />
       <div onClick={onClickHandler}>
         <Text children={title} className={styles['shop-card-title']} variant={TextVariantEnum.S} />
       </div>

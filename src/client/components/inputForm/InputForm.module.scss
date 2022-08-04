@@ -1,0 +1,22 @@
+.upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-file {
+    display: block;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    padding: 10px 15px;
+  }
+
+  &-text {
+    display: flex;
+    justify-content: start;
+
+    &-file {
+      justify-content: center;
+    }
+  }
+}

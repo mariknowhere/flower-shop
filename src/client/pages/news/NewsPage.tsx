@@ -1,7 +1,7 @@
 import React, {FC, useContext} from 'react';
 import Navigator from "../../components/navigator/Navigator";
 import {Context} from "../../../index";
-import New from "./new/New";
+import News from "./news/News";
 import styles from './NewsPage.module.scss';
 
 const NewsPage: FC = () => {
@@ -13,7 +13,7 @@ const NewsPage: FC = () => {
       <Navigator {...navigator} />
       <div className={styles['news-container']}>
         {items.map(item => (
-          <New {...item} key={item.id} />
+          <News {...item} key={item.id} />
         ))}
       </div>
     </div>

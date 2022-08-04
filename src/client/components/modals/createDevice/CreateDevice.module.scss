@@ -1,39 +1,8 @@
 @import "src/client/styles/colors";
 @import "src/client/styles/variables";
 
-.device-modal {
-
-  &-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  &-text {
-    cursor: default;
-  }
-
-  &-input {
-    margin: 8px 0;
-  }
-
-  &-image {
-    display: block;
-    font-size: 16px;
-    border: 1px solid #ced4da;
-    border-radius: 0.375rem;
-    padding: 10px 15px;
-
-    &-text {
-      display: flex;
-      justify-content: center;
-      padding-top: 10px;
-    }
-
-    &-wrapper {
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
-  }
+.device-modal-button {
+  font-size: 20px;
+  line-height: 40px;
+  margin-top: 10px;
 }

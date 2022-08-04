@@ -19,7 +19,6 @@ export default class UserStore {
       auth: {
         login: {
           name: 'user_login',
-          type: 'text',
           placeholder: 'Логин',
           image: {
             url: 'icons/auth/user.png',
@@ -28,7 +27,6 @@ export default class UserStore {
         },
         password: {
           name: 'user_password',
-          type: 'password',
           placeholder: 'Пароль',
           image: {
             url: 'icons/auth/password.png',
@@ -37,7 +35,6 @@ export default class UserStore {
         },
         checkbox: {
           text: 'Запомнить меня на этом устройстве',
-          type: 'checkbox',
           name: 'user_remember',
           id: 'user_remember',
         },

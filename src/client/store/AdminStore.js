@@ -12,34 +12,22 @@ export default class AdminStore {
           height: 45,
         },
       },
-      inputs: [
-        {
-          placeholder: 'Введите название',
-          title: 'Введите название:',
-          image: {
-            url: 'icons/admin/text.png',
-            height: 25,
-          },
+      titleInput: {
+        placeholder: 'Введите название',
+        title: 'Введите название:',
+        image: {
+          url: 'icons/admin/text.png',
+          height: 25,
         },
-        {
-          placeholder: 'Введите стоимость',
-          title: 'Введите стоимость (руб.):',
-          type: 'number',
-          image: {
-            url: 'icons/admin/money.png',
-            height: 25,
-          },
+      },
+      priceInput: {
+        placeholder: 'Введите стоимость',
+        title: 'Введите стоимость (коп.):',
+        image: {
+          url: 'icons/admin/money.png',
+          height: 25,
         },
-        {
-          placeholder: 'Введите стоимость',
-          title: 'Введите стоимость (коп.):',
-          type: 'number',
-          image: {
-            url: 'icons/admin/money.png',
-            height: 25,
-          },
-        },
-      ],
+      },
       typeInput: {
         list: 'list',
         id: 'list',
@@ -49,6 +37,12 @@ export default class AdminStore {
         },
         text: 'Выберите тип',
       },
+      imageInput: {
+        title: 'Выберите изображение:',
+        accept: 'image/*',
+        name: 'input-file',
+      },
+      buttonText: 'Добавить товар',
     }
     this._news = {
       header: {
@@ -57,7 +51,32 @@ export default class AdminStore {
           url: 'icons/close.png',
           height: 45,
         },
-      }
+      },
+      titleInput: {
+        title: 'Введите заголовок:',
+        placeholder: 'Введите заголовок...',
+        image: {
+          url: 'icons/admin/text.png',
+          height: 25,
+        },
+      },
+      descriptionInput: {
+        title: 'Введите сообщение:',
+        id: 'description'
+      },
+      dateInput: {
+        title: 'Выберите дату:',
+        image: {
+          url: 'icons/date.png',
+          height: 25,
+        }
+      },
+      imageInput: {
+        title: 'Выберите изображение:',
+        accept: 'image/*',
+        id: 'input-file',
+      },
+      buttonText: 'Опубликовать новость',
     }
   }
 

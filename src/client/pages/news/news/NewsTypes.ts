@@ -6,7 +6,7 @@ interface IDateProps {
   text: string;
 }
 
-export interface INewProps {
+export interface INewsProps {
   title: string;
   mainImage: IImageProps;
   date: IDateProps;

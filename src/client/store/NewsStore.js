@@ -19,11 +19,11 @@ export default class NewsStore {
         id: 1,
         title: 'Скидки 30% в честь 1 августа!',
         mainImage: {
-          url: 'icons/news/discounts.jpg',
+          url: 'icons/discounts.jpg',
         },
         date: {
           image: {
-            url: 'icons/news/date.png',
+            url: 'icons/date.png',
             height: 25,
           },
           text: '20 Июля',
@@ -39,11 +39,11 @@ export default class NewsStore {
         id: 2,
         title: '19 Мая работаем до 16:00!',
         mainImage: {
-          url: 'icons/news/warning.jpg',
+          url: 'icons/warning.jpg',
         },
         date: {
           image: {
-            url: 'icons/news/date.png',
+            url: 'icons/date.png',
             height: 25,
           },
           text: '19 Июля',

@@ -1,5 +1,5 @@
 export interface IImageProps {
-  url: string;
+  url?: string;
   alt?: string;
   width?: number;
   height?: number;
