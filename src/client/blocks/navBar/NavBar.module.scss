@@ -1,0 +1,42 @@
+@import 'src/client/styles/colors';
+@import 'src/client/styles/variables';
+
+.navbar {
+  width: 100%;
+  background: $color-navbar;
+
+  &-container {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  &-list {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 1 auto;
+  }
+
+  &-button {
+    line-height: 18px;
+  }
+
+  &-social {
+    color: $color-white;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+
+    &-image {
+      margin-right: 4px;
+    }
+  }
+
+  &-description {
+    display: flex;
+    justify-items: flex-end;
+    color: $color-white;
+    margin-left: 40px;
+  }
+}

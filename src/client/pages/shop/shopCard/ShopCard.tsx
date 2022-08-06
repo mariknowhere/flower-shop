@@ -3,7 +3,7 @@ import {IShopCardProps} from "./ShopCardTypes";
 import styles from './ShopCard.module.scss';
 import Image from "../../../components/image/Image";
 import Text from "../../../components/text/Text";
-import {buy} from "../../../constants/shop";
+import {BUY_BUTTON_TEXT} from "../../../constants/shop";
 import {TextVariantEnum} from "../../../components/text/TextTypes";
 import {useNavigate} from 'react-router-dom'
 import {DEVICE_ROUTE} from "../../../constants/routes";
@@ -23,7 +23,7 @@ const ShopCard: FC<IShopCardProps> = ({ title, image, price, id }) => {
       </div>
       <div className={styles['shop-card-bottom']}>
         <Text children={price} className={styles['shop-card-price']} />
-        <SecondaryButton buttonText={buy} className={styles['shop-card-button']} type={SecondaryButtonEnum.Secondary} />
+        <SecondaryButton buttonText={BUY_BUTTON_TEXT} className={styles['shop-card-button']} type={SecondaryButtonEnum.Secondary} />
       </div>
     </div>
   );

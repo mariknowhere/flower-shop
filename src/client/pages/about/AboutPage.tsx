@@ -5,6 +5,7 @@ import styles from './AboutPage.module.scss';
 import HamburgerMenu from "../../components/hamburgerMenu/HamburgerMenu";
 import Navigator from "../../components/navigator/Navigator";
 import AboutShop from "./aboutShop/AboutShop";
+import Container from "../../components/container/Container";
 
 const AboutPage: FC = () => {
   const { about } = useContext(Context)
@@ -17,16 +18,16 @@ const AboutPage: FC = () => {
   const isShopOpen = currentHour >= 10 && currentHour < 19;
 
   return (
-    <div className={styles.about}>
+    <>
       <HamburgerMenu {...hamburgerMenu} menuActive={menuActive} setMenuActive={setMenuActive} isShopOpen={isShopOpen} />
       <Navigator {...navigator} />
-      <div className={styles['about-container']}>
+      <Container>
         <Text children={title} className={styles['about-title']} />
         {shops.map((shop) => (
           <AboutShop {...shop} onClick={onClickHandler} isShopOpen={isShopOpen} key={shop.id} />
         ))}
-      </div>
-    </div>
+      </Container>
+    </>
   );
 };
 

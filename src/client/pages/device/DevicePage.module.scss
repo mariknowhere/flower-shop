@@ -2,14 +2,8 @@
 @import "src/client/styles/variables";
 
 .device {
-  &-container {
-    display: flex;
-    flex-direction: column;
-    max-width: $block-max-width;
-    margin: 0 auto;
-  }
-
   &-title {
+    width: 100%;
     margin: 20px 0;
     font-size: 36px;
     font-weight: 200;
@@ -133,8 +127,8 @@
     }
 
     &-count {
-      background-color: #F4F4F4;
-      color: #8B8EAB;
+      background-color: $color-green-20;
+      color: $color-gray-20;
       font-weight: bold;
       padding: 1px 6px;
       border-radius: 50%;

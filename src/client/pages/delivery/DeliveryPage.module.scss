@@ -6,15 +6,8 @@ hr {
 }
 
 .delivery {
-  &-container {
-    display: flex;
-    flex-direction: column;
-    max-width: $block-max-width;
-    margin: 0 auto;
-    cursor: default;
-  }
-
   &-title {
+    width: 100%;
     margin: 25px 0 5px;
   }
 

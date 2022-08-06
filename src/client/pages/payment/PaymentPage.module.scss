@@ -2,22 +2,15 @@
 @import "src/client/styles/colors";
 
 .payment {
-  &-container {
-    display: flex;
-    flex-direction: column;
-    max-width: $block-max-width;
-    margin: 0 auto;
-    cursor: default;
-  }
-
   &-topic {
     margin: 25px 0 10px;
+    width: 100%;
   }
 
   &-table,
   &-table-category,
   &-table-category-value {
-    border: 1px solid #ddd;
+    border: 1px solid $color-table-border;
   }
 
   &-table-row {
@@ -27,10 +20,12 @@
   }
 
   &-title {
+    width: 100%;
     margin: 20px 0 3px;
   }
 
   &-list {
+    width: 100%;
     padding-left: 25px;
   }
 

@@ -58,7 +58,6 @@
     display: flex;
     justify-content: start;
     flex-grow: 1;
-    font-weight: normal !important;
   }
 
   &-close-icon {
@@ -95,18 +94,19 @@
     &-geo,
     &-email,
     &-hours {
-      color: $color-black-20 !important;
     }
 
     &-geo {
+      color: $color-black-20;
       transition: color $animation-duration ease;
 
       &:hover {
-        color: $color-hover !important;
+        color: $color-hover;
       }
     }
 
     &-hours {
+      color: $color-black-20;
       pointer-events: none;
     }
 
@@ -127,11 +127,11 @@
 
     &-email {
       font-size: 16px;
-      color: $color-black-10;
+      color: $color-black-20;
       transition: color $animation-duration linear;
 
       &:hover {
-        color: $color-hover !important;
+        color: $color-hover;
       }
     }
   }

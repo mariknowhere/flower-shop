@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import {ISearchProps} from "./SearchTypes";
 import Image from "../image/Image";
 import styles from './Search.module.scss';
+import {SEARCH_SPAN_TEXT} from "../../constants/header";
 
 const Search: FC<ISearchProps> = ({ action, image, name, placeholder, description  }) => {
   return (
@@ -11,7 +12,9 @@ const Search: FC<ISearchProps> = ({ action, image, name, placeholder, descriptio
         <label className={styles['search-label']}>
           <input type="text" name={name} placeholder={placeholder} className={styles['search-input']} />
         </label>
-        <span className={styles['search-description']}>{description}</span>
+        <span className={styles['search-description']}>
+          {SEARCH_SPAN_TEXT}<u>{description}</u>
+        </span>
       </form>
     </div>
   );

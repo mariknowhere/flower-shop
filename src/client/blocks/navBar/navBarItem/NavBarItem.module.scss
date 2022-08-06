@@ -1,0 +1,31 @@
+@import "src/client/styles/colors";
+@import "src/client/styles/variables";
+
+.navbar-item {
+  display: block;
+  font-style: normal;
+  color: $color-white;
+  font-size: 15px;
+  line-height: 20px;
+  padding: 8px 0;
+  transition: all $animation-duration ease-out;
+  -webkit-transition: all $animation-duration ease-out;
+
+  &:hover {
+    color: $color-number-hover;
+  }
+
+  &-wrapper {
+    &:not(:first-child, :last-child) {
+      margin: 0 20px;
+    }
+
+    &:first-child {
+      margin-right: 20px;
+    }
+
+    &:last-child {
+      margin-left: 20px;
+    }
+  }
+}

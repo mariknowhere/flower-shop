@@ -22,22 +22,22 @@
     width: 100%;
     height: 40px;
     padding: 10px 5px 10px 30px;
-    font-size: 1rem;
-    border: 1px solid $color-gray-20;
+    font-size: 15px;
+    border: 1px solid $color-gray-25;
     appearance: none;
     transition: border-color $animation-duration ease-in-out,box-shadow $animation-duration ease-in-out;
 
     &:focus {
-      box-shadow: 0 0 10px $color-gray-20;
+      box-shadow: 0 0 10px $color-gray-25;
     }
   }
 
   &-description {
     display: block;
     position: absolute;
-    color: $color-gray-20;
+    color: $color-search;
     top: 12px;
     right: 10px;
-    pointer-events: none;
+    cursor: text;
   }
 }

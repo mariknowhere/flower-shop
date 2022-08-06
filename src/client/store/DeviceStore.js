@@ -10,7 +10,7 @@ export default class DeviceStore {
       },
       socialBackImage: {
         image: {
-          url: 'icons/less.png',
+          url: '../icons/less.png',
           height: 40,
         },
         href: '/',

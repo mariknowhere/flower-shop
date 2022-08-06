@@ -3,7 +3,7 @@ import Title from "../../components/title/Title";
 import Image from "../../components/image/Image";
 import Text from "../../components/text/Text";
 import styles from "./DevicePage.module.scss";
-import {buy} from "../../constants/shop";
+import {BUY_BUTTON_TEXT} from "../../constants/shop";
 import {Link} from "react-router-dom";
 import {PAYMENT_ROUTE} from "../../constants/routes";
 import Navigator from "../../components/navigator/Navigator";
@@ -11,6 +11,7 @@ import {Context} from "../../../index";
 import {TitleVariantEnum} from "../../components/title/TitleTypes";
 import {TextVariantEnum} from "../../components/text/TextTypes";
 import SecondaryButton from "../../components/button/secondaryButton/SecondaryButton";
+import Container from "../../components/container/Container";
 
 const radix = 10;
 
@@ -58,7 +59,7 @@ const DevicePage = () => {
   return (
     <div className={styles.device}>
       <Navigator {...navigator} />
-      <div className={styles['device-container']}>
+      <Container>
         <Title children={'Букет Барселона из хризантемы, роз и диантуса'} variant={TitleVariantEnum.H1} className={styles['device-title']} />
         <div className={styles['device-content']}>
           <div>
@@ -71,7 +72,7 @@ const DevicePage = () => {
                 <Image url={'https://zakazcvetov.by/static/front/img/view/delivery.svg'} className={styles['device-car']} />
                 <Text children={'Бесплатная доставка'} variant={TextVariantEnum.S} className={styles['device-delivery']} />
               </div>
-              <SecondaryButton buttonText={buy} className={styles['device-button']} />
+              <SecondaryButton buttonText={BUY_BUTTON_TEXT} className={styles['device-button']} />
               <div className={styles['device-item-wrapper']}>
                 {items.map(({image, category, value}) => (
                   <div key={category} className={styles['device-item']}>
@@ -99,7 +100,7 @@ const DevicePage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

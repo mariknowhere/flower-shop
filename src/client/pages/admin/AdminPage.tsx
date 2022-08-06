@@ -4,6 +4,7 @@ import {Context} from "../../../index";
 import styles from './AdminPage.module.scss';
 import CreateDevice from "../../components/modals/createDevice/CreateDevice";
 import CreateNews from "../../components/modals/createNews/CreateNews";
+import Container from "../../components/container/Container";
 
 const AdminPage = () => {
   const [isNewModalVisible, setNewModalVisible] = useState(false);
@@ -16,7 +17,7 @@ const AdminPage = () => {
   const onNewCreateButtonClick = () => setNewModalVisible(!isNewModalVisible);
 
   return (
-    <div className={styles.admin}>
+    <Container className={styles.admin}>
       <SecondaryButton
         buttonText={buttons.buttonText}
         className={styles['admin-button']}
@@ -29,7 +30,7 @@ const AdminPage = () => {
       />
       <CreateNews isDeviceModalVisible={isNewModalVisible} setDeviceModalVisible={setNewModalVisible} />
       <CreateDevice isDeviceModalVisible={isDeviceModalVisible} setDeviceModalVisible={setDeviceModalVisible} />
-    </div>
+    </Container>
   );
 };
 

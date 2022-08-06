@@ -1,1 +1,1 @@
-export const buy = 'Купить';
+export const BUY_BUTTON_TEXT = 'Купить';

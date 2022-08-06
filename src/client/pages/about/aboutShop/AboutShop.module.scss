@@ -7,12 +7,12 @@
   width: 100%;
   height: auto;
   padding: 25px;
-  border: 1px solid $color-gray-20;
+  border: 1px solid $color-gray-25;
   border-radius: 5px;
   transition: all $animation-duration linear;
 
   &:hover {
-    box-shadow: 0 0 24px $color-gray-20;
+    box-shadow: 0 0 24px $color-gray-25;
   }
 
   &-info {

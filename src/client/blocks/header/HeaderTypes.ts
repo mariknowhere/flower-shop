@@ -5,6 +5,6 @@ import {ISocialProps} from "../../components/social/SocialTypes";
 export interface IHeaderProps {
   image: IImageProps;
   search: ISearchProps;
-  socials: ISocialProps[];
-  socialNumbers: ISocialProps[];
+  basket: ISocialProps;
+  signInImage: IImageProps;
 }

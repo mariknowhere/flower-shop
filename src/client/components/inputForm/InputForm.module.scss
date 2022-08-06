@@ -1,3 +1,5 @@
+@import "src/client/styles/colors";
+
 .upload {
   display: flex;
   flex-direction: column;
@@ -6,7 +8,7 @@
   &-file {
     display: block;
     font-size: 16px;
-    border: 1px solid #ced4da;
+    border: 1px solid $color-gray-25;
     border-radius: 0.375rem;
     padding: 10px 15px;
   }

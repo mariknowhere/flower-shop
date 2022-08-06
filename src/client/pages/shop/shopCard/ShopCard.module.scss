@@ -12,7 +12,7 @@
 
   &-title {
     cursor: pointer;
-    font-size: 15px !important;
+    font-size: 15px;
     margin: 10px 0;
   }
 
@@ -23,7 +23,7 @@
   }
 
   &-price {
-    font-weight: 600 !important;
+    font-weight: 600;
     color: $color-green-10;
   }
 

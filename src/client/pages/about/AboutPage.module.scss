@@ -1,18 +1,9 @@
 @import 'src/client/styles/designMixins';
 @import 'src/client/styles/variables';
 
-.about {
-  &-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: $block-max-width;
-    margin: 0 auto;
-  }
-
-  &-title {
-    font-size: 20px;
-    padding: 50px 0 40px 0;
-    pointer-events: none;
-  }
+.about-title {
+  width: 100%;
+  font-size: 20px;
+  padding: 50px 0 40px 0;
+  pointer-events: none;
 }

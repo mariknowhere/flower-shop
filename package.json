@@ -1,6 +1,6 @@
 {
   "name": "flower-shop",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "engines": {
     "node": "16.x"
@@ -17,7 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "sass": "1.53.0",
+    "sass": "1.54.3",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4",
     "axios": "^0.27.2",

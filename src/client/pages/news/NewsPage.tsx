@@ -3,6 +3,7 @@ import Navigator from "../../components/navigator/Navigator";
 import {Context} from "../../../index";
 import News from "./news/News";
 import styles from './NewsPage.module.scss';
+import Container from "../../components/container/Container";
 
 const NewsPage: FC = () => {
   const { news } = useContext(Context);
@@ -11,11 +12,11 @@ const NewsPage: FC = () => {
   return (
     <div className={styles.news}>
       <Navigator {...navigator} />
-      <div className={styles['news-container']}>
+      <Container className={styles['news-container']}>
         {items.map(item => (
           <News {...item} key={item.id} />
         ))}
-      </div>
+      </Container>
     </div>
   );
 };

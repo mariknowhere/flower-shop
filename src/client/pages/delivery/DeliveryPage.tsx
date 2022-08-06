@@ -6,6 +6,8 @@ import styles from './DeliveryPage.module.scss';
 import Table from "../../components/table/Table";
 import Text from "../../components/text/Text";
 import {TextVariantEnum} from "../../components/text/TextTypes";
+import Container from "../../components/container/Container";
+import {CursorVariantEnum} from "../../components/container/ContainerTypes";
 
 const DeliveryPage: FC = () => {
   const { delivery } = useContext(Context);
@@ -14,12 +16,12 @@ const DeliveryPage: FC = () => {
   return (
     <div>
       <Navigator {...navigator} />
-      <div className={styles['delivery-container']}>
+      <Container cursor={CursorVariantEnum.Default}>
         <Title children={title} className={styles['delivery-title']} />
         <Table {...table} classNameRow={styles['delivery-table-row']} />
         <hr className={styles['delivery-divider']}/>
         <Text children={description} variant={TextVariantEnum.S} className={styles['delivery-description']} />
-      </div>
+      </Container>
     </div>
   );
 };

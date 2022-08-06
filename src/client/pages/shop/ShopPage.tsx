@@ -5,6 +5,8 @@ import {Context} from "../../../index";
 import ShopCard from "./shopCard/ShopCard";
 import classNames from "classnames";
 import {observer} from "mobx-react-lite";
+import Container from "../../components/container/Container";
+import {DirectionVariantEnum} from "../../components/container/ContainerTypes";
 
 const ShopPage = observer(() => {
   const { device } = useContext(Context);
@@ -13,7 +15,7 @@ const ShopPage = observer(() => {
   return (
     <div className={styles.shop}>
       <div className={styles['shop-types-wrapper']}>
-        <div className={styles['shop-types']}>
+        <Container className={styles['shop-types']} direction={DirectionVariantEnum.Row}>
           {types.map(type => (
             <ShopType
               {...type}
@@ -23,13 +25,13 @@ const ShopPage = observer(() => {
               key={type.id}
             />
           ))}
-        </div>
+        </Container>
       </div>
-      <div className={styles['shop-container']}>
+      <Container>
         <div className={styles['shop-cards']}>
           {devices.map(device => <ShopCard {...device} key={device.id} />)}
         </div>
-      </div>
+      </Container>
     </div>
   );
 });

@@ -6,6 +6,8 @@ import Title from "../../components/title/Title";
 import Table from "../../components/table/Table";
 import Text from "../../components/text/Text";
 import {TextVariantEnum} from "../../components/text/TextTypes";
+import Container from "../../components/container/Container";
+import {CursorVariantEnum} from "../../components/container/ContainerTypes";
 
 const PaymentPage: FC = () => {
   const { payment } = useContext(Context);
@@ -14,7 +16,7 @@ const PaymentPage: FC = () => {
   return (
     <div className={styles.payment}>
       <Navigator {...navigator} />
-      <div className={styles['payment-container']}>
+      <Container cursor={CursorVariantEnum.Default}>
         <Title children={topic} className={styles['payment-topic']} />
         <Table
           {...table}
@@ -31,7 +33,7 @@ const PaymentPage: FC = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </Container>
     </div>
   );
 };

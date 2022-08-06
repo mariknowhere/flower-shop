@@ -1,6 +1,6 @@
 import {ISocialProps} from "../../components/social/SocialTypes";
 
-export interface IMenuProps {
+export interface INavBarProps {
   items: ISocialProps[];
-  social: ISocialProps;
+  number: ISocialProps;
 }
