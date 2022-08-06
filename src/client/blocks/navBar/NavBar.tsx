@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useContext} from 'react';
 import {INavBarProps} from "./NavBarTypes";
 import styles from './NavBar.module.scss';
 import Social from "../../components/social/Social";
@@ -9,14 +9,24 @@ import {TextVariantEnum} from "../../components/text/TextTypes";
 import {SCHEDULE_TEXT} from "../../constants/navbar";
 import Container from "../../components/container/Container";
 import {DirectionVariantEnum} from "../../components/container/ContainerTypes";
+import {Context} from "../../../index";
+import classNames from "classnames";
 
 const NavBar: FC<INavBarProps> = observer(({ items, number }) => {
+  const { navbar } = useContext(Context);
+
   return (
     <div className={styles.navbar}>
       <Container className={styles['navbar-container']} direction={DirectionVariantEnum.Row}>
         <ul className={styles['navbar-list']}>
-          {items.map(({ href, text, id }) => (
-            <NavBarItem href={href} text={text} key={id} />
+          {items.map((item) => (
+            <NavBarItem
+              href={item.href}
+              text={item.text}
+              key={item.id}
+              className={classNames({ [styles['navbar-item-active']]: item.id === navbar.selectedItem.id })}
+              onClick={() => navbar.setSelectedItem(item)}
+            />
           ))}
         </ul>
         <Social
