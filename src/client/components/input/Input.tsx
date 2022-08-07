@@ -24,9 +24,9 @@ const Input: FC<IInputProps> = ({
         list={list}
         id={name}
         placeholder={placeholder}
-        className={styles.input}
+        className={classNames(styles.input, { [styles['input-without-image']]: !image })}
       />
-      <Image {...image} className={styles['input-image']} />
+      {image && <Image {...image} className={styles['input-image']}/>}
     </div>
   );
 };

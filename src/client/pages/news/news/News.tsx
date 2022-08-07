@@ -19,7 +19,9 @@ const News: FC<INewsProps> = ({ title, date, mainImage, description, review }) =
           <Text children={`Опубликовано: ${date.text}`} className={styles['news-date-text']} />
         </div>
         <Text children={description} className={styles['news-description']} />
-        <Link to={review.href} children={<Button button={review} className={styles['news-review']} />} />
+        <Link to={review.href}>
+          <Button buttonText={review.text} className={styles['news-review']} />
+        </Link>
       </div>
     </div>
   );

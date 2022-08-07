@@ -43,6 +43,17 @@ export default class AdminStore {
         name: 'input-file',
       },
       buttonText: 'Добавить товар',
+      compound: {
+        name: {
+          placeholder: 'Название...',
+          name: 'product'
+        },
+        count: {
+          placeholder: 'Количество...',
+          name: 'count',
+        },
+        buttonText: ''
+      }
     }
     this._news = {
       header: {

@@ -1,9 +1,14 @@
 import {IImageProps} from "../../../components/image/ImageTypes";
-import {ISocialProps} from "../../../components/social/SocialTypes";
 
 interface IDateProps {
   image: IImageProps;
   text: string;
+}
+
+export interface IReviewProps {
+  text: string;
+  href: string;
+  count?: string;
 }
 
 export interface INewsProps {
@@ -12,5 +17,5 @@ export interface INewsProps {
   date: IDateProps;
   id: number;
   description: string;
-  review: ISocialProps;
+  review: IReviewProps;
 }

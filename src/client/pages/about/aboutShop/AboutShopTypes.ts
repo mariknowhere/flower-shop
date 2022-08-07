@@ -1,5 +1,5 @@
 import {IImageProps} from "../../../components/image/ImageTypes";
-import {ISocialProps} from "../../../components/social/SocialTypes";
+import {IReviewProps} from "../../news/news/NewsTypes";
 
 interface ITitleProps {
   text: string;
@@ -14,11 +14,6 @@ interface IGeoProps {
 interface IShoppingCenterProps {
   text: string;
   href: string;
-}
-
-interface IReviewProps {
-  social: ISocialProps;
-  count: string;
 }
 
 export interface IAboutShopProps {

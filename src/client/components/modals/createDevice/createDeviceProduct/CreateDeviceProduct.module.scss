@@ -1,0 +1,17 @@
+.device-modal-product {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 15px;
+
+  &-input {
+    margin: 0 10px;
+  }
+
+  &-button {
+    display: flex;
+    height: fit-content;
+    font-size: 15px;
+    line-height: 20px;
+  }
+}

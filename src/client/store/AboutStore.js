@@ -39,10 +39,8 @@ export default class AboutStore {
           href: 'https://www.google.com/maps/place/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%B5%D1%86,+%D0%9F%D0%BE%D0%BB%D0%BE%D1%86%D0%BA/@55.4840061,28.7856092,17z/data=!3m1!4b1!4m5!3m4!1s0x46c48e02f0dd2b77:0x9b7854471ce0f712!8m2!3d55.4839794!4d28.788089',
         },
         review: {
-          social: {
-            href: 'https://www.instagram.com/stories/highlights/17922300922743998/',
-            text: 'Отзывы',
-          },
+          href: 'https://www.instagram.com/stories/highlights/17922300922743998/',
+          text: 'Отзывы',
           count: '10',
         },
         social: {

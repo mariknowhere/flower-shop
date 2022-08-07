@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
 import styles from "./Button.module.scss";
-import Social from "../social/Social";
 import {IButtonProps} from "./ButtonTypes";
 import classNames from "classnames";
+import Text from "../text/Text";
 
-const Button: FC<IButtonProps> = ({ button, buttonLabel, className, classNameButton }) => {
+const Button: FC<IButtonProps> = ({ buttonText, buttonLabel, className, classNameButton }) => {
   return (
     <div className={classNames(className, styles.button)}>
-      <Social {...button} className={classNames(classNameButton, styles['button-text'])} />
+      <Text children={buttonText} className={classNames(classNameButton, styles['button-text'])} />
       {buttonLabel && <span className={styles['button-label']}>{buttonLabel}</span>}
     </div>
   );

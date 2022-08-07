@@ -1,8 +1,38 @@
 @import "src/client/styles/colors";
 @import "src/client/styles/variables";
 
-.device-modal-button {
-  font-size: 20px;
-  line-height: 40px;
-  margin-top: 10px;
+.device-modal {
+  &-button {
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: 10px;
+  }
+
+  &-text {
+    margin: 10px 0;
+  }
+
+  &-add-button {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 15px;
+  }
+
+  &-product {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 15px;
+
+    &-input {
+      margin: 0 10px;
+    }
+
+    &-button {
+      display: flex;
+      height: fit-content;
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
 }

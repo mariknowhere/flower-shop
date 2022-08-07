@@ -35,12 +35,14 @@ const AboutShop: FC <IAboutShopProps> = ({
           <Text children={hours} variant={TextVariantEnum.S} className={styles['about-shop-info-hours']} />
         </div>
         <Social text={shoppingCenter.text} href={shoppingCenter.href} className={styles['about-shop-info-description']} />
-        <Button
-          button={review.social}
-          buttonLabel={review.count}
-          className={styles['about-shop-info-review']}
-          classNameButton={styles['about-shop-info-review-text']}
-        />
+        <a href={review.href} target='_blank'>
+          <Button
+            buttonText={review.text}
+            buttonLabel={review.count}
+            className={styles['about-shop-info-review']}
+            classNameButton={styles['about-shop-info-review-text']}
+          />
+        </a>
       </div>
       <div>
         <button className={styles['about-shop-button']} onClick={onClick}>

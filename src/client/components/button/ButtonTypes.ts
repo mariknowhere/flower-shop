@@ -1,7 +1,5 @@
-import {ISocialProps} from "../social/SocialTypes";
-
 export interface IButtonProps {
-  button: ISocialProps;
+  buttonText: string;
   buttonLabel?: string;
   className?: string;
   classNameButton?: string;
