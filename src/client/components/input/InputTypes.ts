@@ -1,3 +1,4 @@
+import { KeyboardEvent } from "react";
 import {IImageProps} from "../image/ImageTypes";
 
 export enum InputTypeEnum {
@@ -18,4 +19,6 @@ export interface IInputProps {
   list?: string;
   onClick?: () => void;
   accept?: string;
+  value?: any;
+  onChange?: (event: KeyboardEvent<HTMLInputElement>) => void;
 }

@@ -14,6 +14,8 @@ const InputForm: FC<IUploadFormProps> = ({
   list,
   className,
   onClick,
+  value,
+  onChange,
 }) => {
   return (
     <form encType="multipart/form-data" method="post" className={styles['upload']}>
@@ -25,6 +27,8 @@ const InputForm: FC<IUploadFormProps> = ({
         placeholder={placeholder}
         accept={accept}
         list={list}
+        value={value}
+        onChange={onChange}
         className={className}
         onClick={onClick}
       />

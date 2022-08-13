@@ -5,7 +5,7 @@ export enum TitleVariantEnum {
 }
 
 export interface ITitleProps {
-  children: string;
+  children?: string;
   variant?: TitleVariantEnum;
   className?: string;
 }

@@ -7,7 +7,14 @@ import {PRODUCT_BUTTON_TEXT} from "../../../../constants/createDevice";
 import {ICreateDeviceProductProps} from "./CreateDeviceProductTypes";
 import {Context} from "../../../../../index";
 
-const CreateDeviceProduct: FC<ICreateDeviceProductProps> = ({ id, removeProductHandler }) => {
+const CreateDeviceProduct: FC<ICreateDeviceProductProps> = ({
+  id,
+  removeProductHandler,
+  name,
+  count,
+  onChangeName,
+  onChangeCount
+}) => {
   const { admin } = useContext(Context);
   const { deviceModalData } = admin;
 
@@ -17,12 +24,16 @@ const CreateDeviceProduct: FC<ICreateDeviceProductProps> = ({ id, removeProductH
         className={styles['device-modal-product-input']}
         placeholder={deviceModalData.compound.name.placeholder}
         name={deviceModalData.compound.name.name}
+        value={name}
+        onChange={onChangeName}
       />
       <Input
         className={styles['device-modal-product-input']}
         placeholder={deviceModalData.compound.count.placeholder}
         name={deviceModalData.compound.count.name}
         type={InputTypeEnum.Number}
+        value={count}
+        onChange={onChangeCount}
       />
       <SecondaryButton
         onClick={() => removeProductHandler(id)}

@@ -2,10 +2,10 @@ import {Dispatch, ReactNode, SetStateAction} from "react";
 import {IImageProps} from "../../image/ImageTypes";
 
 export interface IModalProps {
-  title: string;
-  image: IImageProps;
-  isDeviceModalVisible: boolean;
-  setDeviceModalVisible: Dispatch<SetStateAction<boolean>>;
+  isModalVisible: boolean;
+  setModalVisible: Dispatch<SetStateAction<boolean>>;
+  title?: string;
+  image?: IImageProps;
   children?: ReactNode;
   className?: string;
 }

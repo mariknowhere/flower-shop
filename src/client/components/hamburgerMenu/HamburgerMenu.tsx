@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useState, KeyboardEvent, useContext} from 'react';
 import styles from './HamburgerMenu.module.scss';
 import classNames from "classnames";
 import {IHamburgerMenuProps} from "./HamburgerMenuTypes";
@@ -13,8 +13,13 @@ import SecondaryButton from "../button/secondaryButton/SecondaryButton";
 import {SecondaryButtonEnum} from "../button/secondaryButton/SecondaryButtonTypes";
 import Input from "../input/Input";
 import {InputTypeEnum} from "../input/InputTypes";
+import {login, registration} from "../../http/userAPI";
+import {REGISTRATION_ROUTE, SHOP_ROUTE} from "../../constants/routes";
+import {Link, useNavigate} from "react-router-dom";
+import {observer} from "mobx-react-lite";
+import {Context} from "../../../index";
 
-const HamburgerMenu: FC<IHamburgerMenuProps> = ({
+const HamburgerMenu: FC<IHamburgerMenuProps> = observer(({
   menuActive,
   setMenuActive,
   header,
@@ -22,7 +27,43 @@ const HamburgerMenu: FC<IHamburgerMenuProps> = ({
   auth,
   isShopOpen,
 }) => {
+  const { user } = useContext(Context);
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate();
+
   const onMenuClickHandler = () => setMenuActive ? setMenuActive(!menuActive) : console.error('ERROR');
+
+  const onEmailChangeHandler = (event: KeyboardEvent<HTMLInputElement>) => setEmail(event.target.value)
+
+  const onPasswordChangeHandler = (event: KeyboardEvent<HTMLInputElement>) => setPassword(event.target.value);
+  let data;
+
+  const onLoginClick = async () => {
+    try {
+      data = await login(email, password)
+      user.setUser(user)
+      user.setAuth(true)
+    } catch (error: Error | any) {
+      alert(error.response.data.message)
+    }
+
+    data = await registration(email, password)
+
+  }
+
+  const onRegistrationClick = async () => {
+    try {
+      data = await registration(email, password);
+      user.setUser(user);
+      user.setAuth(true);
+      navigate(SHOP_ROUTE);
+      setMenuActive ? setMenuActive(!menuActive) : console.error('ERROR');
+    } catch (error: Error | any) {
+      alert(error.response.data.message)
+    }
+  }
 
   return (
     <div className={classNames(styles['hamburger-menu'], { [styles['hamburger-menu-active']]: menuActive })} onClick={onMenuClickHandler} >
@@ -72,8 +113,13 @@ const HamburgerMenu: FC<IHamburgerMenuProps> = ({
         {auth && (
           <div className={styles['hamburger-menu-auth']}>
             <form>
-              <Input {...auth.login} />
-              <Input {...auth.password} type={InputTypeEnum.Password} />
+              <Input {...auth.login} value={email} onChange={onEmailChangeHandler} />
+              <Input
+                {...auth.password}
+                type={InputTypeEnum.Password}
+                value={password}
+                onChange={onPasswordChangeHandler}
+              />
               <div className={styles['hamburger-menu-checkbox']}>
                 <input
                   name={auth.checkbox.name}
@@ -81,20 +127,29 @@ const HamburgerMenu: FC<IHamburgerMenuProps> = ({
                   type={InputTypeEnum.Checkbox}
                   className={styles['hamburger-menu-checkbox-input']}
                 />
-                <label className={styles['hamburger-menu-checkbox-label']} htmlFor={auth.checkbox.name}>{auth.checkbox.text}</label>
+                <label className={styles['hamburger-menu-checkbox-label']} htmlFor={auth.checkbox.name}>
+                  {auth.checkbox.text}
+                </label>
               </div>
-              <SecondaryButton buttonText={auth.buttonText} className={styles['hamburger-menu-button']}  />
               <SecondaryButton
-                buttonText={auth.secondaryButtonText}
+                buttonText={auth.buttonText}
                 className={styles['hamburger-menu-button']}
-                type={SecondaryButtonEnum.Secondary}
+                onClick={onLoginClick}
               />
+              <Link to={REGISTRATION_ROUTE}>
+                <SecondaryButton
+                  buttonText={auth.secondaryButtonText}
+                  className={styles['hamburger-menu-button']}
+                  type={SecondaryButtonEnum.Secondary}
+                  onClick={onRegistrationClick}
+                />
+              </Link>
             </form>
           </div>
         )}
       </div>
     </div>
   );
-};
+});
 
 export default HamburgerMenu;

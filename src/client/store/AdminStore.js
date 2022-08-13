@@ -1,8 +1,9 @@
 export default class AdminStore {
   constructor() {
     this._buttons = {
-      buttonText: 'Добавить новость',
-      secondaryButtonText: 'Добавить товар'
+      newsButtonText: 'Добавить новость',
+      deviceButtonText: 'Добавить товар',
+      typeButtonText: 'Добавить тип'
     }
     this._deviceModalData = {
       header: {
@@ -89,6 +90,24 @@ export default class AdminStore {
       },
       buttonText: 'Опубликовать новость',
     }
+    this._type = {
+      header: {
+        title: 'Создать новый тип',
+        image: {
+          url: 'icons/close.png',
+          height: 45,
+        },
+      },
+      input: {
+        title: 'Введите название:',
+        placeholder: 'Введите название...',
+        image: {
+          url: 'icons/admin/text.png',
+          height: 25,
+        },
+      },
+      buttonText: 'Создать тип',
+    }
   }
 
   get buttons() {
@@ -101,5 +120,9 @@ export default class AdminStore {
 
   get news() {
     return this._news
+  }
+
+  get type() {
+    return this._type
   }
 }

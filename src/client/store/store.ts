@@ -20,15 +20,19 @@ export const store = {
       description: 'тюльпаны и пионы',
     },
     basket: {
-      href: '',
-      image: {
-        url: 'icons/header/basket.png',
-        height: 40,
-      },
-      id: 1,
+      url: 'icons/header/basket.png',
+      height: 40,
     },
     signInImage: {
       url: 'icons/header/user.png',
+      height: 40,
+    },
+    adminImage: {
+      url: 'icons/header/admin.png',
+      height: 40,
+    },
+    logOutImage: {
+      url: 'icons/header/exit.png',
       height: 40,
     },
   },

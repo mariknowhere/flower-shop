@@ -24,8 +24,8 @@
   }
 
   &-button {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 20px!important;
+    line-height: 28px!important;
     padding: 5px 40px !important;
   }
 
@@ -36,7 +36,17 @@
   }
 
   &-image {
-    margin-right: 20px;
     cursor: pointer;
+
+    &-wrapper {
+      border-radius: 6px;
+      padding: 5px;
+      background: $color-white;
+      transition: all $animation-duration linear;
+
+      &:hover {
+        background: $color-gray-40;
+      }
+    }
   }
 }

@@ -1,4 +1,4 @@
-import React, {FC, useContext} from 'react';
+import React, {FC, useContext, useEffect} from 'react';
 import styles from "./ShopTypes.module.scss";
 import Container from "../../../components/container/Container";
 import {DirectionVariantEnum} from "../../../components/container/ContainerTypes";
@@ -6,10 +6,15 @@ import ShopType from "../shopType/ShopType";
 import classNames from "classnames";
 import {Context} from "../../../../index";
 import {observer} from "mobx-react-lite";
+import {fetchTypes} from "../../../http/deviceAPI";
 
 const ShopTypes: FC = observer(() => {
   const { device } = useContext(Context);
   const { types, selectedType } = device;
+
+  useEffect(() => {
+    fetchTypes().then(data => device.setTypes(data))
+  }, []);
 
   return (
     <div className={styles['shop-types']}>

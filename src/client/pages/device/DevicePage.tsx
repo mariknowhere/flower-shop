@@ -1,10 +1,10 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Title from "../../components/title/Title";
 import Image from "../../components/image/Image";
 import Text from "../../components/text/Text";
 import styles from "./DevicePage.module.scss";
 import {BUY_BUTTON_TEXT} from "../../constants/shop";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {PAYMENT_ROUTE} from "../../constants/routes";
 import Navigator from "../../components/navigator/Navigator";
 import {Context} from "../../../index";
@@ -12,49 +12,58 @@ import {TitleVariantEnum} from "../../components/title/TitleTypes";
 import {TextVariantEnum} from "../../components/text/TextTypes";
 import SecondaryButton from "../../components/button/secondaryButton/SecondaryButton";
 import Container from "../../components/container/Container";
+import {FREE_DELIVERY_TEXT} from "../../constants/device";
+import {COMPOUND_TEXT} from "../../constants/createDevice";
+import {fetchOneDevice} from "../../http/deviceAPI";
 
+const items = [
+  {
+    image: {
+      url: '../icons/device/time.png',
+      height: 20,
+    },
+    category: 'Можем доставить: ',
+    value: '1-2 часа'
+  },
+  {
+    image: {
+      url: '../icons/device/pickup.png',
+      height: 20,
+    },
+    category: 'Самовывоз: ',
+    value: 'г.Полоцк, просп. Франциска Скорины, 37'
+  },
+];
+
+const characteristics = [
+  {
+    value: 'Роза одноголовая Пинк Мондиал',
+    count: 5,
+  },
+  {
+    value: 'Хризантема',
+    count: 5,
+  },
+  {
+    value: 'Кустовая роза Роял Порцелина ',
+    count: 5,
+  },
+  {
+    value: 'Писташ',
+    count: 5,
+  },
+];
 const radix = 10;
 
 const DevicePage = () => {
-  const items = [
-    {
-      image: {
-        url: '../icons/device/time.png',
-        height: 20,
-      },
-      category: 'Можем доставить: ',
-      value: '1-2 часа'
-    },
-    {
-      image: {
-        url: '../icons/device/pickup.png',
-        height: 20,
-      },
-      category: 'Самовывоз: ',
-      value: 'г.Полоцк, просп. Франциска Скорины, 37'
-    },
-  ];
-
-  const characteristics = [
-    {
-      value: 'Роза одноголовая Пинк Мондиал',
-      count: 5,
-    },
-    {
-      value: 'Хризантема',
-      count: 5,
-    },
-    {
-      value: 'Кустовая роза Роял Порцелина ',
-      count: 5,
-    },
-    {
-      value: 'Писташ',
-      count: 5,
-    },
-  ];
+  const [item, setItem] = useState({ compound: [] });
+  const { id } = useParams();
   const { device } = useContext(Context);
   const { navigator } = device;
+
+  useEffect(() => {
+    fetchOneDevice(id).then(data => setItem(data))
+  }, []);
 
   return (
     <div className={styles.device}>
@@ -70,7 +79,7 @@ const DevicePage = () => {
               <Title children={'190 руб. 0 коп.'} variant={TitleVariantEnum.H2} className={styles['device-price']} />
               <div className={styles['device-delivery-wrapper']}>
                 <Image url={'https://zakazcvetov.by/static/front/img/view/delivery.svg'} className={styles['device-car']} />
-                <Text children={'Бесплатная доставка'} variant={TextVariantEnum.S} className={styles['device-delivery']} />
+                <Text children={FREE_DELIVERY_TEXT} variant={TextVariantEnum.S} className={styles['device-delivery']} />
               </div>
               <SecondaryButton buttonText={BUY_BUTTON_TEXT} className={styles['device-button']} />
               <div className={styles['device-item-wrapper']}>
@@ -87,7 +96,7 @@ const DevicePage = () => {
                 <Link to={PAYMENT_ROUTE} className={styles['device-payment-link']}>Все способы оплаты</Link>
               </div>
               <div className={styles['device-characteristics-wrapper']}>
-                <Text children={'Состав:'} className={styles['device-characteristics-title']} />
+                <Text children={COMPOUND_TEXT} className={styles['device-characteristics-title']} />
                 <div className={styles['device-characteristics']}>
                   {characteristics.map(({ value, count }) => (
                     <div key={value} className={styles['device-characteristic']}>

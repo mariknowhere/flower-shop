@@ -13,6 +13,8 @@ const Input: FC<IInputProps> = ({
   list,
   onClick,
   accept,
+  value,
+  onChange,
 }) => {
   return (
     <div className={classNames(className, styles['input-wrapper'])}>
@@ -23,6 +25,8 @@ const Input: FC<IInputProps> = ({
         name={name}
         list={list}
         id={name}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder}
         className={classNames(styles.input, { [styles['input-without-image']]: !image })}
       />

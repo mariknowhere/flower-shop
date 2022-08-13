@@ -3,30 +3,40 @@ import styles from './Header.module.scss';
 import Image from "../../components/image/Image";
 import {IHeaderProps} from "./HeaderTypes";
 import Search from "../../components/search/Search";
-import Social from "../../components/social/Social";
 import SecondaryButton from "../../components/button/secondaryButton/SecondaryButton";
 import {SecondaryButtonEnum} from "../../components/button/secondaryButton/SecondaryButtonTypes";
 import {Link, useNavigate} from "react-router-dom";
-import {ADMIN_ROUTE, SHOP_ROUTE} from "../../constants/routes";
+import {ADMIN_ROUTE, BASKET_ROUTE, LOGIN_ROUTE, SHOP_ROUTE} from "../../constants/routes";
 import {CATALOG_BUTTON_TEXT} from "../../constants/header";
 import {observer} from "mobx-react-lite";
 import {Context} from "../../../index";
 import AuthPage from "../../pages/auth/AuthPage";
-import {ADMIN_BUTTON_TEXT, SIGN_OUT_BUTTON_TEXT} from "../../constants/navbar";
 import Container from "../../components/container/Container";
 import {CursorVariantEnum, DirectionVariantEnum} from "../../components/container/ContainerTypes";
 
-const Header: FC<IHeaderProps> = observer(({ image, search, basket, signInImage  }) => {
+const Header: FC<IHeaderProps> = observer(({
+  image,
+  search,
+  basket,
+  signInImage,
+  logOutImage,
+  adminImage,
+}) => {
   const { user } = useContext(Context);
   const navigate = useNavigate();
   const [isMenuActive, setMenuActive] = useState(false);
 
   const onButtonClick = () => {
-    user.setAuth(true);
     setMenuActive(!isMenuActive);
+    navigate(LOGIN_ROUTE);
   };
 
   const onAdminButtonClick = () => navigate(ADMIN_ROUTE);
+
+  const onLogOutButtonClick = () => {
+    user.setUser({});
+    user.setAuth(false);
+  };
 
   return (
     <header className={styles.header}>
@@ -49,22 +59,23 @@ const Header: FC<IHeaderProps> = observer(({ image, search, basket, signInImage 
         </div>
         {user.isAuth ? (
           <>
-            <SecondaryButton
-              buttonText={ADMIN_BUTTON_TEXT}
-              className={styles['header-button']}
-              onClick={onAdminButtonClick}
-            />
-            <SecondaryButton
-              buttonText={SIGN_OUT_BUTTON_TEXT}
-              className={styles['header-button']}
-            />
+            <div className={styles['header-image-wrapper']}>
+              <Image {...adminImage} className={styles['header-image']} onClick={onAdminButtonClick} />
+            </div>
+            <div className={styles['header-image-wrapper']}>
+              <Image {...logOutImage} className={styles['header-image']} onClick={onLogOutButtonClick} />
+            </div>
           </>
         ) : (
-          <div onClick={onButtonClick}>
+          <div onClick={onButtonClick} className={styles['header-image-wrapper']}>
             <Image {...signInImage} className={styles['header-image']} />
           </div>
         )}
-        <Social {...basket} className={styles['header-image']} />
+        <Link to={BASKET_ROUTE}>
+          <div className={styles['header-image-wrapper']}>
+            <Image {...basket} className={styles['header-image']} />
+          </div>
+        </Link>
       </Container>
     </header>
   );
