@@ -1,7 +1,6 @@
 import React, {FC, useContext} from 'react';
 import styles from "./CreateDeviceProduct.module.scss";
 import Input from "../../../input/Input";
-import {InputTypeEnum} from "../../../input/InputTypes";
 import SecondaryButton from "../../../button/secondaryButton/SecondaryButton";
 import {PRODUCT_BUTTON_TEXT} from "../../../../constants/createDevice";
 import {ICreateDeviceProductProps} from "./CreateDeviceProductTypes";
@@ -31,7 +30,6 @@ const CreateDeviceProduct: FC<ICreateDeviceProductProps> = ({
         className={styles['device-modal-product-input']}
         placeholder={deviceModalData.compound.count.placeholder}
         name={deviceModalData.compound.count.name}
-        type={InputTypeEnum.Number}
         value={count}
         onChange={onChangeCount}
       />

@@ -8,7 +8,7 @@ class DeviceController {
     try {
       let { name, priceInRubles, priceInCents, typeId, compound } = request.body
       const { img } = request.files
-      let fileName = `${uuid.v4()}.jpg`
+      let fileName = uuid.v4() + `.jpg`
       await img.mv(path.resolve(__dirname, '..', 'static', fileName))
 
       const device = await Device.create({ name, priceInRubles, priceInCents, typeId, img: fileName })
@@ -18,11 +18,10 @@ class DeviceController {
         compound.forEach(i => {
           DeviceInfo.create({
             name: i.name,
-            price: i.price,
+            count: i.count,
             deviceId: device.id
           })
         })
-
       }
 
       return response.json(device)
@@ -54,7 +53,7 @@ class DeviceController {
     const device = await Device.findOne(
       {
         where: { id },
-        include: [{ model: DeviceInfo, as: 'info' }]
+        include: [{ model: DeviceInfo, as: 'compound' }]
       }
     )
 

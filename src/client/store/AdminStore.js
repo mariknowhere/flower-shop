@@ -21,7 +21,15 @@ export default class AdminStore {
           height: 25,
         },
       },
-      priceInput: {
+      priceRublesInput: {
+        placeholder: 'Введите стоимость',
+        title: 'Введите стоимость (руб.):',
+        image: {
+          url: 'icons/admin/money.png',
+          height: 25,
+        },
+      },
+      priceCentsInput: {
         placeholder: 'Введите стоимость',
         title: 'Введите стоимость (коп.):',
         image: {

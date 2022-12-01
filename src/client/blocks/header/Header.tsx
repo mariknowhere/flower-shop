@@ -13,6 +13,7 @@ import {Context} from "../../../index";
 import AuthPage from "../../pages/auth/AuthPage";
 import Container from "../../components/container/Container";
 import {CursorVariantEnum, DirectionVariantEnum} from "../../components/container/ContainerTypes";
+import Logo from "../../components/logo/Logo";
 
 const Header: FC<IHeaderProps> = observer(({
   image,
@@ -42,11 +43,7 @@ const Header: FC<IHeaderProps> = observer(({
     <header className={styles.header}>
       <AuthPage isMenuActive={isMenuActive} setMenuActive={setMenuActive} />
       <Container className={styles['header-container']} direction={DirectionVariantEnum.Row} cursor={CursorVariantEnum.Default}>
-        <div className={styles['header-logo-wrapper']}>
-          <Link to={SHOP_ROUTE}>
-            <Image {...image} className={styles['header-logo']} />
-          </Link>
-        </div>
+        <Logo image={image} />
         <Link to={SHOP_ROUTE}>
           <SecondaryButton
             buttonText={CATALOG_BUTTON_TEXT}

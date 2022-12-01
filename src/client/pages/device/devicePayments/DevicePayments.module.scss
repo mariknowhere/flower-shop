@@ -1,0 +1,22 @@
+@import 'src/client/styles/colors';
+
+.device {
+  &-payment {
+    width: 80px;
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    &-link {
+      color: $color-green-10;
+      font-size: 16px;
+      border-bottom: 1px dashed #60967D;
+      margin-left: 10px;
+    }
+  }
+}

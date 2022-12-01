@@ -6,7 +6,7 @@ export enum TextVariantEnum {
 }
 
 export interface ITextProps {
-  children: string;
+  children?: string;
   variant?: TextVariantEnum;
   className?: string;
 }

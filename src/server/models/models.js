@@ -47,7 +47,7 @@ Device.belongsTo(Type)
 Device.hasMany(BasketDevice)
 BasketDevice.belongsTo(Device)
 
-Device.hasMany(DeviceInfo, { as: 'info' })
+Device.hasMany(DeviceInfo, { as: 'compound' })
 DeviceInfo.belongsTo(Device)
 
 module.exports = {

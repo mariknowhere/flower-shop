@@ -1,0 +1,38 @@
+@import 'src/client/styles/colors';
+
+.device {
+  &-characteristics {
+    display: flex;
+    flex-direction: column;
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    &-title {
+      width: 80px;
+    }
+  }
+
+  &-characteristic {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2px 0;
+    color: $color-gray-15;
+
+    &-value {
+      margin-right: 5px;
+    }
+
+    &-count {
+      background-color: $color-green-20;
+      color: $color-gray-20;
+      font-weight: bold;
+      padding: 1px 6px;
+      border-radius: 50%;
+    }
+  }
+}

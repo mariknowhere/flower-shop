@@ -17,7 +17,7 @@ const ShopTypes: FC = observer(() => {
   }, []);
 
   return (
-    <div className={styles['shop-types']}>
+    <nav className={styles['shop-types']}>
       <Container className={styles['shop-types-container']} direction={DirectionVariantEnum.Row}>
         {types.map(type => (
           <ShopType
@@ -29,7 +29,7 @@ const ShopTypes: FC = observer(() => {
           />
         ))}
       </Container>
-    </div>
+    </nav>
   );
 });
 

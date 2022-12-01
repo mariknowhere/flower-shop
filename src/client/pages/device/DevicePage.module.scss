@@ -12,17 +12,28 @@
   &-content {
     display: flex;
     flex-direction: row;
+    width: 100%;
     padding-bottom: 30px;
   }
 
   &-image {
-    max-width: 600px;
-    padding: 0 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &-wrapper {
+      position: relative;
+      min-height: 600px;
+      width: 60%;
+    }
   }
 
   &-info {
-    padding: 0 10px;
-    width: 100%;
+    padding: 0 25px;
+    width: 40%;
   }
 
   &-price {
@@ -50,88 +61,6 @@
     width: 100%;
     line-height: 40px;
     font-size: 20px;
-  }
-
-  &-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    &:not(:last-child){
-      margin-bottom: 8px;
-    }
-
-    &-wrapper {
-      display: flex;
-      flex-direction: column;
-      margin: 20px 0;
-    }
-
-    &-image {
-      margin-right: 8px;
-    }
-
-    &-category {
-      color: $color-gray-15;
-      margin-right: 3px;
-    }
-
-    &-value {
-      color: $color-green-10;
-    }
-  }
-
-  &-payment {
-    width: 80px;
-
-    &-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    &-link {
-      color: $color-green-10;
-      font-size: 16px;
-      border-bottom: 1px dashed #60967D;
-      margin-left: 10px;
-    }
-  }
-
-  &-characteristics {
-    display: flex;
-    flex-direction: column;
-
-    &-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-    }
-
-    &-title {
-      width: 80px;
-    }
-  }
-
-  &-characteristic {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 2px 0;
-    color: $color-gray-15;
-
-    &-value {
-      margin-right: 5px;
-    }
-
-    &-count {
-      background-color: $color-green-20;
-      color: $color-gray-20;
-      font-weight: bold;
-      padding: 1px 6px;
-      border-radius: 50%;
-    }
+    margin-top: 8px;
   }
 }

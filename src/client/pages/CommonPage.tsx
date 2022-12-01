@@ -9,9 +9,10 @@ import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
 import {check} from "../http/userAPI";
 import Text from "../components/text/Text";
+import Footer from "../blocks/footer/Footer";
 
 const CommonPage: FC = observer(() => {
-  const { headerData, navbarData } = store;
+  const { headerData, navbarData, footerData } = store;
   const { user } = useContext(Context);
   const [loading, setLoading] = useState(true);
 
@@ -32,6 +33,7 @@ const CommonPage: FC = observer(() => {
       <Header {...headerData} />
       <ShopTypes />
       <AppRouter />
+      {/*<Footer {...footerData} />*/}
     </BrowserRouter>
   );
 });

@@ -8,7 +8,7 @@ import {
 export const store = {
   headerData: {
     image: {
-      url: 'icons/header/logo.jpg',
+      url: 'icons/logo.jpg',
     },
     search: {
       action: 'search',
@@ -74,5 +74,42 @@ export const store = {
       text: '+375 (29) 562-93-58',
       id: 1,
     },
+  },
+  footerData: {
+    image: {
+      url: 'icons/logo.jpg'
+    },
+    description: {
+      first: '(с) 2021-2022 Цветочная Кухня',
+      second: 'ИП Жданько Мария Вячеславовна',
+      third: 'Юр. адрес: Минский район, аг. Михановичи, ул. Советская, д. 31а, кв. 78',
+      fourth: 'УНП 692187139 Зарегистрирован в Торговом реестре',
+      fifth: 'Республики Беларусь 08.07.2021г'
+    },
+    links: [
+      {
+        href: DELIVERY_ROUTE,
+        text: 'Доставка',
+        id: 1,
+      },
+      {
+        href: PAYMENT_ROUTE,
+        text: 'Способы оплаты',
+        id: 2,
+      },
+      {
+        href: NEWS_ROUTE,
+        text: 'Новости',
+        id: 3,
+      },
+      {
+        href: ABOUT_ROUTE,
+        text: 'Наши магазины',
+        id: 4,
+      },
+    ],
+    socials: {
+
+    }
   },
 };

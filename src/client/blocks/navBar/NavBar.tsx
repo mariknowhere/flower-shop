@@ -16,7 +16,7 @@ const NavBar: FC<INavBarProps> = observer(({ items, number }) => {
   const { navbar } = useContext(Context);
 
   return (
-    <div className={styles.navbar}>
+    <nav className={styles.navbar}>
       <Container className={styles['navbar-container']} direction={DirectionVariantEnum.Row}>
         <ul className={styles['navbar-list']}>
           {items.map((item) => (
@@ -36,7 +36,7 @@ const NavBar: FC<INavBarProps> = observer(({ items, number }) => {
         />
         <Text children={SCHEDULE_TEXT} className={styles['navbar-description']} variant={TextVariantEnum.S} />
       </Container>
-    </div>
+    </nav>
   );
 });
 

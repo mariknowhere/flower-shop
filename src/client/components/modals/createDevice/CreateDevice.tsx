@@ -19,10 +19,10 @@ type CreateDeviceType = Omit<ICreateDeviceProductProps, 'removeProductHandler'>;
 
 const CreateDevice: FC<IModalProps> = observer(({ isModalVisible, setModalVisible }) => {
   const [type, setType] = useState('');
-  const [name, setName] = useState('');
-  const [priceInRubles, setPriceInRubles] = useState(0);
-  const [priceInCents, setPriceInCents] = useState(0);
-  const [file, setFile] = useState<null | File>(null);
+  const [name, setName] = useState<string>('');
+  const [priceInRubles, setPriceInRubles] = useState<number>(0);
+  const [priceInCents, setPriceInCents] = useState<number>(0);
+  const [file, setFile] = useState<string | File>('');
 
   const { admin, device } = useContext(Context);
   const [compound, setCompound] = useState<CreateDeviceType[]>([]);
@@ -33,20 +33,20 @@ const CreateDevice: FC<IModalProps> = observer(({ isModalVisible, setModalVisibl
   }, []);
 
   const addProduct = () => {
-    setCompound([ ...compound, { id: Date.now() } ])
+    setCompound([ ...compound, { id: Date.now(), name: '', count: '' } ])
   }
 
   const removeProduct = (id: number) => {
     setCompound(compound.filter(product => product.id !== id))
   }
 
-  const selectFile = (event: KeyboardEvent<HTMLInputElement> | null) => {
-    setFile(event!.target.files![0])
-  }
-
   const changeCompound = (key: string, value: KeyboardEvent<HTMLInputElement> | string, number: number) => {
     setCompound(compound.map(product => product.id === number ? { ...product, [key]: value } : product ))
   }
+
+  const selectFile = (event: KeyboardEvent<HTMLInputElement>) => {
+    setFile(event.target.files![0]);
+  };
 
   const addDeviceButtonClick = () => {
     const formData = new FormData();
@@ -54,17 +54,18 @@ const CreateDevice: FC<IModalProps> = observer(({ isModalVisible, setModalVisibl
     formData.append('name', name);
     formData.append('priceInRubles', `${priceInRubles}`);
     formData.append('priceInCents', `${priceInCents}`);
-    formData.append('img', `10000`);
+    formData.append('img', file);
     formData.append('typeId', `${device.selectedType.id}`);
+    formData.append('compound', JSON.stringify(compound))
 
-    createDevice(formData).then(data => setModalVisible(false));
+    createDevice(formData).then(() => setModalVisible(false));
   }
 
   const typeText = `${deviceModalData.typeInput.text}:`;
 
   return (
     <Modal {...deviceModalData.header} isModalVisible={isModalVisible} setModalVisible={setModalVisible}>
-      <div>
+      <form encType="multipart/form-data" method="post">
         <InputForm
           title={typeText}
           list={deviceModalData.typeInput.list}
@@ -78,7 +79,7 @@ const CreateDevice: FC<IModalProps> = observer(({ isModalVisible, setModalVisibl
             <option value={type.name} key={type.id} onClick={() => device.setSelectedType(type)} />
           ))}
         </datalist>
-      </div>
+      </form>
       <InputForm
         title={deviceModalData.titleInput.title}
         placeholder={deviceModalData.titleInput.placeholder}
@@ -87,17 +88,17 @@ const CreateDevice: FC<IModalProps> = observer(({ isModalVisible, setModalVisibl
         onChange={event => setName(event.target.value)}
       />
       <InputForm
-        title={deviceModalData.priceInput.title}
-        placeholder={deviceModalData.priceInput.placeholder}
-        image={deviceModalData.priceInput.image}
+        title={deviceModalData.priceRublesInput.title}
+        placeholder={deviceModalData.priceRublesInput.placeholder}
+        image={deviceModalData.priceRublesInput.image}
         type={InputTypeEnum.Number}
         value={priceInRubles}
         onChange={event => setPriceInRubles(Number(event.target.value))}
       />
       <InputForm
-        title={deviceModalData.priceInput.title}
-        placeholder={deviceModalData.priceInput.placeholder}
-        image={deviceModalData.priceInput.image}
+        title={deviceModalData.priceCentsInput.title}
+        placeholder={deviceModalData.priceCentsInput.placeholder}
+        image={deviceModalData.priceCentsInput.image}
         type={InputTypeEnum.Number}
         value={priceInCents}
         onChange={event => setPriceInCents(Number(event.target.value))}
@@ -107,7 +108,6 @@ const CreateDevice: FC<IModalProps> = observer(({ isModalVisible, setModalVisibl
         accept={deviceModalData.imageInput.accept}
         name={deviceModalData.imageInput.name}
         type={InputTypeEnum.File}
-        value={file}
         onChange={selectFile}
       />
       <hr />

@@ -18,7 +18,7 @@ const InputForm: FC<IUploadFormProps> = ({
   onChange,
 }) => {
   return (
-    <form encType="multipart/form-data" method="post" className={styles['upload']}>
+    <div className={styles['upload']}>
       <Text children={title} className={styles[`upload-text-${type}`]} />
       <Input
         image={image}
@@ -32,7 +32,7 @@ const InputForm: FC<IUploadFormProps> = ({
         className={className}
         onClick={onClick}
       />
-    </form>
+    </div>
   );
 };
 
